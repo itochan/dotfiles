@@ -1,0 +1,9 @@
+[user]
+	name = Kazunori Jo (itochan)
+	email = itochan315@gmail.com
+[color]
+	ui = true
+[alias]
+	tree = log --graph --date=short --pretty='format:%C(yellow)%h %Creset%cd %s %Cgreen(%an)%Creset %Cred%d%Creset'
+[core]
+	excludesfile = /Users/itochan/.gitignore
