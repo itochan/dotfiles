@@ -196,10 +196,10 @@ if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f /usr/local/Cel
 fi
 
 # PATH settings
-PATH=/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
+export PATH=~/.rbenv/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
 
 if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
-  PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
+  export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
 fi
 
 # For brew installed ruby settings
