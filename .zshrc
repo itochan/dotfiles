@@ -231,7 +231,7 @@ esac
 # fi
 
 # rbenv
-if [[ -d /usr/local/Cellar/rbenv/$BREW_VER[rbenv] ]]; then
+if [[ -x `whence rbenv` ]]; then
   eval "$(rbenv init -)"
 fi
 
