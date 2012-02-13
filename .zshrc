@@ -149,11 +149,8 @@ if [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
 #  export EDITOR=vim
 fi
 
-# shit emacs!!!!!!!!!
-alias emacs="echo shit"
-alias emacs_is_very_ugly_editor="`which emacs`"
-alias emacs_is_very_ugly_editor_寿限無寿限無五劫の擦り切れ海砂利水魚の水行末雲来末風来末食う寝る処に住む処やぶら小路の藪柑子パイポパイポパイポのシューリンガンシューリンガンのグーリンダイグーリンダイのポンポコピーのポンポコナーの長久命の長助='emacs'
-alias emacshit='vim'
+# emacs
+alias emacs='echo "m9(^Д^)ﾌﾟｷﾞｬｰ"'
 
 # global alias
 alias -g G='| grep'
