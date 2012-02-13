@@ -240,3 +240,17 @@ if [[ -f `whence hub` ]]; then
     source ~/.github
   fi
 fi
+
+# rails console pry
+function rails_func(){
+  if [[ $# = 0 ]]; then
+    rails
+  elif [[ $1 = "console" || $1 = "c" ]]; then
+    pry -r ./config/environment
+  else
+    rails "$*"
+  fi
+}
+if [[ -x `whence pry` ]]; then
+  alias rails=rails_func
+fi
