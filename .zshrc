@@ -244,7 +244,7 @@ fi
 # rails console pry
 function rails_func(){
   if [[ $# = 0 ]]; then
-    rails
+    command rails
   elif [[ $1 = "console" || $1 = "c" ]]; then
     pry -r ./config/environment
   else
