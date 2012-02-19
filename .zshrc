@@ -4,6 +4,13 @@ HISTSIZE=100000
 SAVEHIST=100000
 # End of lines configured by zsh-newuser-install
 
+# PATH settings
+export PATH=~/.rbenv/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
+
+if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
+  export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
+fi
+
 export LANG=ja_JP.UTF-8
 export GIT_SSL_NO_VERIFY=true
 
@@ -190,13 +197,6 @@ if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f /usr/local/Cel
   elif [[ -f /usr/local/Cellar/source-highlight$BREW_VER[source-highlight]/bin/src-hilite-lesspipe.sh ]]; then
     export LESSOPEN="| /usr/local/Cellar/source-highlight/${BREW_VER[source-highlight]}/bin/src-hilite-lesspipe.sh %s"
   fi
-fi
-
-# PATH settings
-export PATH=~/.rbenv/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
-
-if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
-  export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
 fi
 
 # For brew installed ruby settings
