@@ -143,7 +143,7 @@ alias rm="rm -i"
 alias vi="vim"
 alias wget="wget --no-check-certificate"
 alias which="which -a"
-alias sudo='A=`alias` sudo'
+alias sudo='sudo env PATH=$PATH'
 alias grep="grep --color=auto"
 alias git-submodule-update="git submodule foreach 'git pull origin master' && git submodule update"
 alias gist="gist -o"
