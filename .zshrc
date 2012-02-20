@@ -147,7 +147,7 @@ alias sudo='sudo env PATH=$PATH'
 alias grep="grep --color=auto"
 alias git-submodule-update="git submodule foreach 'git pull origin master' && git submodule update"
 alias gist="gist -o"
-alias df="df -h"
+alias df="df -H"
 alias du="du -h"
 
 if [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
