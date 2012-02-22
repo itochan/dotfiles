@@ -16,11 +16,6 @@ export GIT_SSL_NO_VERIFY=true
 
 #export TERM=xterm-256color
 
-# auto completion settings
-autoload -Uz compinit
-compinit
-
-compdef -d rake
 
 
 autoload -Uz colors
@@ -88,21 +83,70 @@ setopt pushd_ignore_dups
 
 setopt nohup
 
+# auto completion settings
+#-----------------------------------------------------------------
+# 補完設定
+#-----------------------------------------------------------------
 # 補完候補のカーソル選択を有効にする
 zstyle ':completion:*:default' menu select=1
+
+# 補完無視ファイル設定
+fignore=(.o)
+# 補完の利用設定
+autoload -Uz compinit; compinit
+
+## キャッシュの設定
+# 補完をキャッシュ
+zstyle ':completion:*' use-cache on
+# キャッシュファイル位置
+# zstyle ':completion:*' cache-path ~/var/zsh/zsh_completion.cache
+# 補完時一部のblobを省略して高速化
+zstyle ':completion:*' accept-exact '*(N)'
+
+## 補完設定
+# 補完表示を全てする
+zstyle ':completion:*' verbose 'yes'
+# 補完の機能を拡張
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+# 補完候補で入力された文字でまず補完してみて、補完不可なら大文字小文字を変換して補完する
+# zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z} r:|[-_.]=**' '+m:{A-Z}={a-z} r:|[-_.]=**'
 # 補完の時に大文字小文字を区別しない(但し、大文字を打った場合は小文字に変換しない)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+## 色設定
 case "${OSTYPE}" in
 freebsd*|darwin*)
   export LSCOLORS=ExGxFxdxCxDxDxhbadExEx
-  zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
   ;;
 *)
   eval `dircolors`
-  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
   ;;
 esac
+zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+
+# 補完候補に LSCOLORS 同様色を付与
+# zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+# ファイルリスト補完でも coreutils ls と同様に色をつける
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# 補完メッセージの色
+# zstyle ':completion:*:messages' format "%{$fg[yellow]%}%d%f"
+# zstyle ':completion:*:warnings' format "%{$fg[red]%}No matches for: %{$fg[yellow]%} %d%f"
+# zstyle ':completion:*:descriptions' format "%{$fg[yellow]%}completing %B%d%b%f"
+# zstyle ':completion:*:corrections' format "%{$fg[yellow]%}%B%d %{$fg[red]%}(errors: %e)%b%f"
+
+# 補完説明を表示する
+zstyle ':completion:*:descriptions' format "%BCompleting %d%b%f"
+zstyle ':completion:*:options' description 'yes'
+# sudo でも補完の対象とする
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+# kill 補完で実行されるコマンドを指定
+zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+
+# URLをコピペした時にエスケープ対象文字を自動エスケープする
+autoload -Uz url-quote-magic
+zstyle ':url-quote-magic:*' url-metas '?'
+zle -N self-insert url-quote-magic
+
 export ZLS_COLORS=$LS_COLORS
 
 #if [ ! -f ~/.zshrc_env ]; then
@@ -112,6 +156,9 @@ export ZLS_COLORS=$LS_COLORS
 #fi
 #zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #zstyle ':completion:*:default' menu select
+
+# ignore completion commands
+compdef -d rake
 
 #bindkey settings
 #bindkey -v
