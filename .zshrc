@@ -84,6 +84,8 @@ setopt pushd_ignore_dups
 setopt nohup
 
 # auto completion settings
+setopt rec_exact
+fpath=($HOME/.zsh/compfunc $fpath)
 #-----------------------------------------------------------------
 # 補完設定
 #-----------------------------------------------------------------
