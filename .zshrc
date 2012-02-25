@@ -215,6 +215,11 @@ if [[ -f ~/.screenrc_env ]]; then
   alias screen="screen -c ~/.screenrc_env"
 fi
 
+if [[ -f ~/.tmux.conf.env ]]; then
+  alias tmux="tmux -f ~/.tmux.conf.env"
+fi
+
+
 if [[ -f /etc/zsh_command_not_found ]]; then
   . /etc/zsh_command_not_found
 fi
@@ -258,14 +263,21 @@ if [[ -e ~/.zshrc_env ]]; then
 fi
 
 # screen SSH settings
-
-function ssh_screen(){
- eval server=\${$#}
- screen -t $server ssh "$@"
-}
-
-case $TERM in (screen*)
-  alias ssh=ssh_screen
+case $TERM in
+  screen)
+    function ssh_tmux() {
+      eval server=\${$#}
+      eval tmux new-window -n "'${server}'" "'ssh $@'"
+    }
+    alias ssh=ssh_tmux
+    ;;
+  screen-bce)
+    function ssh_screen(){
+     eval server=\${$#}
+     screen -t $server ssh "$@"
+    }
+    alias ssh=ssh_screen
+    ;;
 esac
 
 # auto-fu.zsh
