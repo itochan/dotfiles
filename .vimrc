@@ -42,6 +42,7 @@ set nocompatible
   Bundle 'mattn/gist-vim'
   Bundle 'sudo.vim'
   Bundle 'The-NERD-Commenter'
+  Bundle 'acustodioo/vim-tmux'
 
   filetype plugin indent on
 "}}}
