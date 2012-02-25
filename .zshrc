@@ -95,7 +95,7 @@ zstyle ':completion:*:default' menu select=1
 # 補完無視ファイル設定
 fignore=(.o)
 # 補完の利用設定
-autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit -u
 
 ## キャッシュの設定
 # 補完をキャッシュ
