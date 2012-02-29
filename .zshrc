@@ -99,9 +99,10 @@ autoload -Uz compinit; compinit -u
 
 ## キャッシュの設定
 # 補完をキャッシュ
-zstyle ':completion:*' use-cache on
-# キャッシュファイル位置
-# zstyle ':completion:*' cache-path ~/var/zsh/zsh_completion.cache
+if [[ -d ~/.zsh/cache ]]; then
+  zstyle ':completion:*' use-cache on
+  zstyle ':completion:*' cache-path ~/.zsh/cache
+fi
 # 補完時一部のblobを省略して高速化
 zstyle ':completion:*' accept-exact '*(N)'
 
