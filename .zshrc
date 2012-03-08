@@ -81,6 +81,8 @@ setopt hist_ignore_space
 setopt no_beep
 # ヒストリを呼び出してから編集可能な状態にする
 setopt hist_verify
+# log time in history
+setopt extendedhistory
 # pushdで同じディレクトリを重複してpushしない
 setopt pushd_ignore_dups
 
