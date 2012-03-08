@@ -86,6 +86,11 @@ setopt pushd_ignore_dups
 
 setopt nohup
 
+# autojump settings
+if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
+  source ~/.autojump/etc/profile.d/autojump.zsh
+fi
+
 # auto completion settings
 setopt rec_exact
 fpath=($HOME/.zsh/compfunc $fpath)
