@@ -95,7 +95,7 @@ fi
 
 # auto completion settings
 setopt rec_exact
-fpath=($HOME/.zsh/compfunc $fpath)
+fpath=($HOME/.zsh/compfunc/* $fpath)
 #-----------------------------------------------------------------
 # 補完設定
 #-----------------------------------------------------------------
