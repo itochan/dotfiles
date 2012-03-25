@@ -129,13 +129,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 色設定
 case "${OSTYPE}" in
 freebsd*|darwin*)
-  export LSCOLORS=ExGxFxdxCxDxDxhbadExEx
+  export LS_COLORS=ExGxFxdxCxDxDxhbadExEx
   ;;
 *)
   eval `dircolors`
   ;;
 esac
-zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # 補完候補に LSCOLORS 同様色を付与
 # zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
