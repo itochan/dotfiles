@@ -195,6 +195,7 @@ linux*)
   alias ls="ls --color=always -F"
   ;;
 esac
+
 alias l.="ls -d .*"
 alias ll="ls -lh"
 alias cp="cp -i"
@@ -206,7 +207,6 @@ alias which="which -a"
 alias sudo='sudo env PATH=$PATH'
 alias grep="grep --color=auto"
 alias git-submodule-update="git submodule foreach 'git pull origin master' && git submodule update"
-alias gist="gist -o"
 alias df="df -H"
 alias du="du -h"
 
@@ -309,10 +309,14 @@ if [[ -f ~/.github ]]; then
   source ~/.github
 fi
 
+# gist.gem
+if [[ $OSTYPE == (darwin*) ]]; then
+  alias gist="gist -o"
+fi
+
 # hub settings
 if [[ -f `whence hub` ]]; then
   function git(){ hub "$@" }
-
 fi
 
 # rails console pry
