@@ -304,13 +304,15 @@ if [[ -x `whence rbenv` ]]; then
   eval "$(rbenv init -)"
 fi
 
+# github env
+if [[ -f ~/.github ]]; then
+  source ~/.github
+fi
+
 # hub settings
 if [[ -f `whence hub` ]]; then
   function git(){ hub "$@" }
 
-  if [[ -f ~/.github ]]; then
-    source ~/.github
-  fi
 fi
 
 # rails console pry
@@ -320,7 +322,7 @@ function rails_func(){
   elif [[ $1 = "console" || $1 = "c" ]]; then
     pry -r ./config/environment
   else
-    rails "$*"
+    command rails $*
   fi
 }
 if [[ -x `whence pry` ]]; then
