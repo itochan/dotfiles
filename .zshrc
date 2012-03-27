@@ -35,8 +35,8 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 #PROMPT settings
+PROMPT="%n@%m:%B%F{cyan}%~%f%b%# "
 RPROMPT="%1(v|%F{green}%1v%f|)"
-PROMPT="[%n@%m]%~%# "
 
 # auto change directory
 setopt auto_cd
