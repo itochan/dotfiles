@@ -34,8 +34,8 @@ precmd () {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-#PROMPT settings
-PROMPT="%n@%m:%B%F{cyan}%~%f%b%# "
+# PROMPT settings
+PROMPT="%n@%F{magenta}%m%f:%B%F{cyan}%~%f%b%# "
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # auto change directory
