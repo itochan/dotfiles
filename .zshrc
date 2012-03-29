@@ -95,7 +95,7 @@ fi
 
 # auto completion settings
 setopt rec_exact
-fpath=($HOME/.zsh/compfunc/* $fpath)
+fpath=($HOME/.zsh/compfunc $fpath)
 #-----------------------------------------------------------------
 # 補完設定
 #-----------------------------------------------------------------
@@ -105,7 +105,7 @@ zstyle ':completion:*:default' menu select=1
 # 補完無視ファイル設定
 fignore=(.o)
 # 補完の利用設定
-autoload -Uz compinit; compinit -u
+# autoload -Uz compinit; compinit -u
 
 ## キャッシュの設定
 # 補完をキャッシュ
@@ -170,9 +170,6 @@ export ZLS_COLORS=$LS_COLORS
 #fi
 #zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #zstyle ':completion:*:default' menu select
-
-# ignore completion commands
-compdef -d rake
 
 #bindkey settings
 #bindkey -v
@@ -318,6 +315,7 @@ fi
 # hub settings
 if [[ -f `whence hub` ]]; then
   function git(){ hub "$@" }
+  # fpath=($HOME/.zsh/compfunc/hub $fpath)
 fi
 
 # rails console pry
@@ -333,3 +331,9 @@ function rails_func(){
 if [[ -x `whence pry` ]]; then
   alias rails=rails_func
 fi
+
+# compinit
+autoload -Uz compinit; compinit -u
+
+# ignore completion commands
+compdef -d rake
