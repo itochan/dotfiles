@@ -120,7 +120,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 # 補完表示を全てする
 zstyle ':completion:*' verbose 'yes'
 # 補完の機能を拡張
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list
 # 補完候補で入力された文字でまず補完してみて、補完不可なら大文字小文字を変換して補完する
 # zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z} r:|[-_.]=**' '+m:{A-Z}={a-z} r:|[-_.]=**'
 # 補完の時に大文字小文字を区別しない(但し、大文字を打った場合は小文字に変換しない)
