@@ -7,3 +7,6 @@
 [submodule ".zsh/compfunc/hub-zsh-completion"]
 	path = .zsh/compfunc/hub-zsh-completion
 	url = git://github.com/glidenote/hub-zsh-completion.git
+[submodule "tmux-MacOSX-pasteboard"]
+	path = tmux-MacOSX-pasteboard
+	url = git://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
