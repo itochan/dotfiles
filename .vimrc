@@ -43,6 +43,7 @@ set nocompatible
   Bundle 'sudo.vim'
   Bundle 'The-NERD-Commenter'
   Bundle 'acustodioo/vim-tmux'
+  Bundle 'scrooloose/syntastic'
 
   filetype plugin indent on
 "}}}
