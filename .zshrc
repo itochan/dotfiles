@@ -91,6 +91,8 @@ setopt nohup
 # autojump settings
 if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
   source ~/.autojump/etc/profile.d/autojump.zsh
+
+  export AUTOJUMP_KEEP_SYMLINKS=1
 fi
 
 # auto completion settings
