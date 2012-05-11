@@ -318,20 +318,6 @@ if [[ -f `whence hub` ]]; then
   # fpath=($HOME/.zsh/compfunc/hub $fpath)
 fi
 
-# rails console pry
-function rails_func(){
-  if [[ $# = 0 ]]; then
-    command rails
-  elif [[ $1 = "console" || $1 = "c" ]]; then
-    pry -r ./config/environment
-  else
-    command rails $*
-  fi
-}
-if [[ -x `whence pry` ]]; then
-  alias rails=rails_func
-fi
-
 # compinit
 autoload -Uz compinit; compinit -u
 
