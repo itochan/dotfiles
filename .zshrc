@@ -207,6 +207,7 @@ alias grep="grep --color=auto"
 alias git-submodule-update="git submodule foreach 'git pull origin master' && git submodule update"
 alias df="df -H"
 alias du="du -h"
+alias be="bundle exec"
 
 if [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab 2>/dev/null >/dev/null'
