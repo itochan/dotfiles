@@ -44,6 +44,7 @@ set nocompatible
   Bundle 'The-NERD-Commenter'
   Bundle 'acustodioo/vim-tmux'
   Bundle 'scrooloose/syntastic'
+  Bundle 'msanders/cocoa.vim'
 
   filetype plugin indent on
 "}}}
@@ -239,6 +240,7 @@ au FileType c setl ts=8 sw=4 noexpandtab
   set smarttab
   set expandtab
 "}}}
+au FileType objc setl ts=4 sw=4
 
 "color settings
 set t_Co=256
