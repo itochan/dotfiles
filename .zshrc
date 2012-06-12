@@ -8,7 +8,7 @@ SAVEHIST=100000
 dotfiles=$HOME/`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
 
 # PATH settings
-export PATH=~/.rbenv/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
+export PATH=~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
 
 if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
   export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
