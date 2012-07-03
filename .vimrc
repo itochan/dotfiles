@@ -63,14 +63,6 @@ syntax enable
 " lang
 lang en_US.UTF-8
 
-"vimrcbox settings
-let g:vimrcbox_user = "itochan315"
-augroup VimRcBox
-    autocmd!
-    autocmd BufWritePost $MYVIMRC :RcbVimrc
-    autocmd BufWritePost $MYGVIMRC :RcbGVimrc
-augroup END
-
 "neocomplcache settings {{{
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
