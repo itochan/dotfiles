@@ -186,7 +186,7 @@ if has('persistent_undo')
 endif
 
 " tags settings
-set tags=tags
+set tags=tags,.tags
 
 "mouse settings
 set mouse=i
