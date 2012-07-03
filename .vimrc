@@ -60,6 +60,9 @@ set backspace=2
 "syntax settings
 syntax enable
 
+" lang
+lang en_US.UTF-8
+
 "vimrcbox settings
 let g:vimrcbox_user = "itochan315"
 augroup VimRcBox
