@@ -14,7 +14,8 @@ if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
   export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
 fi
 
-export LANG=ja_JP.UTF-8
+# export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 export GIT_SSL_NO_VERIFY=true
 
 #export TERM=xterm-256color
