@@ -185,6 +185,9 @@ if has('persistent_undo')
   augroup END
 endif
 
+" tags settings
+set tags=tags
+
 "mouse settings
 set mouse=i
 
