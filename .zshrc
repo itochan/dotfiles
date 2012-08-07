@@ -222,6 +222,12 @@ fi
 # emacs
 alias emacs='echo "m9(^Д^)ﾌﾟｷﾞｬｰ"'
 
+# adb logcat with coloredlogcat.py
+
+if [[ -f `which coloredlogcat.py` ]]; then
+  alias logcat='coloredlogcat.py'
+fi
+
 # global alias
 alias -g G='| grep'
 
