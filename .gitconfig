@@ -12,5 +12,6 @@
 	st = status -sb
   br = branch
   di = diff
+	pl = pull
 [core]
 	excludesfile = /Users/itochan/.gitignore
