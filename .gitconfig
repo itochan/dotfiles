@@ -15,3 +15,5 @@
 	pl = pull
 [core]
 	excludesfile = /Users/itochan/.gitignore
+[push]
+	default = tracking
