@@ -9,5 +9,6 @@
 	ci = commit
 	st = status
 	br = branch
+	st = status -sb
 [core]
 	excludesfile = /Users/itochan/.gitignore
