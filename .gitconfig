@@ -17,3 +17,5 @@
 	excludesfile = /Users/itochan/.gitignore
 [push]
 	default = tracking
+[pull]
+	rebase = true
