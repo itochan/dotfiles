@@ -10,5 +10,6 @@
 	st = status
 	br = branch
 	st = status -sb
+  br = branch
 [core]
 	excludesfile = /Users/itochan/.gitignore
