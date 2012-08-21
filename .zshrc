@@ -10,8 +10,8 @@ dotfiles=$HOME/`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
 # PATH settings
 export PATH=~/local/android-sdk-macosx/platform-tools:~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
 
-if [[ -f /usr/local/Cellar/ruby/$BREW_VER[ruby]/bin/ruby ]]; then
-  export PATH=/usr/local/Cellar/ruby/$BREW_VER[ruby]/bin:$PATH
+if [[ -f $(brew --prefix ruby)/bin/ruby ]]; then
+  export PATH=$(brew --prefix ruby)/bin:$PATH
 fi
 
 # export LANG=ja_JP.UTF-8
@@ -250,26 +250,14 @@ case "${TERM}" in (kterm*|xterm)
   }
 esac
 
-# brew packages version
-# require: Homebrew
-if [[ -f `which brew` ]]; then
-  typeset -A BREW_VER
-  BREW_LIST=`brew list -v`
-  count=`brew list -v | wc -l | sed 's/ //g'`
-
-  for line in {1..$count}; do
-    BREW_VER+=(`echo ${BREW_LIST} | sed -n ${line}p | sed 's/\([^ ]*\) \(.*\) \(.*\)/\1 \3/'`)
-  done
-fi
-
 # less highlight
 # require: source-highlight
-if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f /usr/local/Cellar/source-highlight/$BREW_VER[source-highlight]/bin/src-hilite-lesspipe.sh ]]; then
+if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh ]]; then
   export LESS='-R'
   if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]]; then
     export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
-  elif [[ -f /usr/local/Cellar/source-highlight$BREW_VER[source-highlight]/bin/src-hilite-lesspipe.sh ]]; then
-    export LESSOPEN="| /usr/local/Cellar/source-highlight/${BREW_VER[source-highlight]}/bin/src-hilite-lesspipe.sh %s"
+  elif [[ -f $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh ]]; then
+    export LESSOPEN="| $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh %s"
   fi
 fi
 
