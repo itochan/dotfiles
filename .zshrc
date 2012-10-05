@@ -20,8 +20,6 @@ export GIT_SSL_NO_VERIFY=true
 
 #export TERM=xterm-256color
 
-
-
 autoload -Uz colors
 colors
 autoload -Uz vcs_info
