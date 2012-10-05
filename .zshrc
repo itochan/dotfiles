@@ -86,6 +86,8 @@ setopt extendedhistory
 setopt pushd_ignore_dups
 
 setopt nohup
+# extended glob
+setopt extended_glob
 
 # autojump settings
 if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
