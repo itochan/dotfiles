@@ -8,7 +8,7 @@ SAVEHIST=100000
 dotfiles=$HOME/`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
 
 # PATH settings
-export PATH=~/local/android-sdk-macosx/platform-tools:~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:/usr/local/android-sdk/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
+export PATH=~/local/android-sdk-macosx/platform-tools:~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:~/local/android-sdk-macosx/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
 
 if [[ -f $(brew --prefix ruby)/bin/ruby ]]; then
   export PATH=$(brew --prefix ruby)/bin:$PATH
@@ -322,3 +322,11 @@ autoload -Uz compinit; compinit -u
 
 # ignore completion commands
 compdef -d rake
+
+
+# homebrew zsh functions
+if [[ -d /usr/local/share/zsh/site-functions ]]; then
+  for CONF in /usr/local/share/zsh/site-functions/*; do
+    source $CONF
+  done
+fi
