@@ -10,8 +10,8 @@ dotfiles=$HOME/`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
 # PATH settings
 export PATH=~/local/android-sdk-macosx/platform-tools:~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:~/local/android-sdk-macosx/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin/:/usr/sbin
 
-if [[ -f $(brew --prefix ruby)/bin/ruby ]]; then
-  export PATH=$(brew --prefix ruby)/bin:$PATH
+if [[ -f /usr/local/opt/ruby/bin/ruby ]]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
 # export LANG=ja_JP.UTF-8
@@ -252,12 +252,12 @@ esac
 
 # less highlight
 # require: source-highlight
-if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh ]]; then
+if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh || -f /usr/local/opt/source-highlight/bin/src-hilite-lesspipe.sh ]]; then
   export LESS='-R'
   if [[ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]]; then
     export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
-  elif [[ -f $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh ]]; then
-    export LESSOPEN="| $(brew --prefix source-highlight)/bin/src-hilite-lesspipe.sh %s"
+  elif [[ -f /usr/local/opt/source-highlight/bin/src-hilite-lesspipe.sh ]]; then
+    export LESSOPEN="| /usr/local/opt/source-highlight/bin/src-hilite-lesspipe.sh %s"
   fi
 fi
 
