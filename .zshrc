@@ -61,7 +61,7 @@ setopt magic_equal_subst
 # 補完時の日本語を正しく表示する
 setopt print_eight_bit
 # 重複するコマンド行は古い方を削除する
-#setopt hist_ignore_all_dups
+setopt hist_ignore_dups
 # 履歴を追加
 setopt append_history
 # 履歴をインクリメンタルに追加
