@@ -1,6 +1,7 @@
 .vim/bundle
 *.tmp
 *.swp
+.zsh/cache
 
 .DS_Store
 Thumbs.db
