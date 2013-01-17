@@ -45,6 +45,8 @@ set nocompatible
   Bundle 'acustodioo/vim-tmux'
   Bundle 'scrooloose/syntastic'
   Bundle 'msanders/cocoa.vim'
+  Bundle 'mattn/webapi-vim'
+  Bundle 'mattn/favstar-vim'
 
   filetype plugin indent on
 "}}}
@@ -371,3 +373,6 @@ command! -bar -bang -nargs=? -complete=file Scouter
 \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 command! -bar -bang -nargs=? -complete=file GScouter
 \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
+
+" favstar.vim
+let g:favstar_user = 'i315'
