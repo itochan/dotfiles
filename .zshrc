@@ -212,6 +212,7 @@ alias df="df -H"
 alias du="du -h"
 alias be="bundle exec"
 alias ctags="ctags -f .tags"
+alias history="history -i"
 
 if [[ -f /Applications/MacVim.app/Contents/MacOS/Vim ]]; then
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab 2>/dev/null >/dev/null'
