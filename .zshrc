@@ -203,7 +203,6 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias vi="vim"
-alias wget="wget --no-check-certificate --content-dispositon"
 alias which="which -a"
 alias sudo='sudo env PATH=$PATH'
 alias grep="grep --color=auto"
