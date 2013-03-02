@@ -96,6 +96,11 @@ if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
   export AUTOJUMP_KEEP_SYMLINKS=1
 fi
 
+# zsh-syntax-highlighting
+if [[ -f $dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  source $dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 # auto completion settings
 setopt rec_exact
 fpath=($HOME/.zsh/compfunc /usr/local/share/zsh-completions $fpath)
