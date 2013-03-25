@@ -25,6 +25,8 @@ colors
 autoload -Uz vcs_info
 autoload -Uz zmv
 alias zmv='noglob zmv -V -W'
+alias zcp='noglob zmv -V -W -C'
+alias zln='noglob zmv -V -W -L'
 
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
