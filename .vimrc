@@ -47,6 +47,7 @@ set nocompatible
   Bundle 'msanders/cocoa.vim'
   Bundle 'mattn/webapi-vim'
   Bundle 'mattn/favstar-vim'
+  Bundle 'nathanaelkane/vim-indent-guides'
 
   filetype plugin indent on
 "}}}
@@ -376,3 +377,6 @@ command! -bar -bang -nargs=? -complete=file GScouter
 
 " favstar.vim
 let g:favstar_user = 'i315'
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup=1
