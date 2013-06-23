@@ -242,6 +242,7 @@ au FileType c setl ts=8 sw=4 noexpandtab
   set expandtab
 "}}}
 au FileType objc setl ts=4 sw=4
+au FileType java setl ts=4 sw=4
 
 "color settings
 set t_Co=256
