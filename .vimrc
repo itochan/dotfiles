@@ -189,17 +189,14 @@ set tags=tags,.tags
 "mouse settings
 set mouse=i
 
-"windows gvim settings
-if (has('win32') || has('win64')) && has('gui_running')
-  set guifont=MeiryoKe_Gothic:h10
-endif
-
 "encoding settings
 set fenc=utf-8
 set fencs=ucs_bom,utf-8,euc-jp,iso-2022-jp,cp932 ",utf-16,utf-16le
 
 "gvim settings
 if has('gui_running')
+  set guifont=Source\ Code\ Pro:h12,Monaco:h12
+
   "http://vim-users.jp/2010/01/hack120/
   let g:save_window_file = expand('~/.vimwinpos')
   augroup SaveWindow
