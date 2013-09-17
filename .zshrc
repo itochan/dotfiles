@@ -8,7 +8,7 @@ SAVEHIST=100000
 dotfiles=$HOME/`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
 
 # PATH settings
-export PATH=~/local/android-sdks/platform-tools:~/.rbenv/bin:~/.cabal/bin:/opt/nginx/sbin:~/local/android-sdks/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin:/usr/sbin
+export PATH=~/local/android-sdks/platform-tools:~/.rbenv/bin:~/.cabal/bin:/usr/local/share/python:/opt/nginx/sbin:~/local/android-sdks/tools:~/local/bin:~/ruby/local/bin:/usr/games:/usr/kerberos/bin:~/bin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/local/tripwire/sbin:/sbin:/usr/sbin:~/local/android-sdks/tools/proguard/bin
 
 if [[ -f /usr/local/opt/ruby/bin/ruby ]]; then
   export PATH=/usr/local/opt/ruby/bin:$PATH
@@ -24,9 +24,9 @@ autoload -Uz colors
 colors
 autoload -Uz vcs_info
 autoload -Uz zmv
-alias zmv='noglob zmv -V -W'
-alias zcp='noglob zmv -V -W -C'
-alias zln='noglob zmv -V -W -L'
+alias zmv='noglob zmv -v -W'
+alias zcp='noglob zmv -v -W -C'
+alias zln='noglob zmv -v -W -L'
 
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
@@ -35,10 +35,6 @@ precmd () {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-# PROMPT settings
-PROMPT="%n@%F{magenta}%m%f:%B%F{cyan}%~%f%b%# "
-RPROMPT="%1(v|%F{green}%1v%f|)"
-
 # auto change directory
 setopt auto_cd
 # auto directory pushd that you can get dirs list by cd -[tab]
@@ -54,6 +50,8 @@ setopt list_packed
 setopt noautoremoveslash
 # no beep sound when complete list displayed
 setopt nolistbeep
+# no beep
+setopt nobeep
 # TABで順に保管候補を切り替える
 setopt auto_menu
 # 保管候補一覧でファイルの種別をマーク
@@ -91,6 +89,12 @@ setopt nohup
 # extended glob
 setopt extended_glob
 
+setopt transient_rprompt
+
+# PROMPT settings
+PROMPT="%n@%F{magenta}%m%f:%B%F{cyan}%~%f%b%# "
+RPROMPT="%1(v|%F{green}%1v%f|)"
+
 # autojump settings
 if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
   source ~/.autojump/etc/profile.d/autojump.zsh
@@ -105,7 +109,7 @@ fi
 
 # auto completion settings
 setopt rec_exact
-fpath=($HOME/.zsh/compfunc /usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 #-----------------------------------------------------------------
 # 補完設定
 #-----------------------------------------------------------------
@@ -135,6 +139,8 @@ zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _
 # zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z} r:|[-_.]=**' '+m:{A-Z}={a-z} r:|[-_.]=**'
 # 補完の時に大文字小文字を区別しない(但し、大文字を打った場合は小文字に変換しない)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+zstyle ':completion:*:*:git:*' source /usr/local/share/zsh/site-functions/_git
 
 ## 色設定
 case "${OSTYPE}" in
@@ -246,6 +252,13 @@ if [[ -f ~/.tmux.conf.env ]]; then
   alias tmux="tmux -f ~/.tmux.conf.env"
 fi
 
+if [[ -x `which irb` ]]; then
+  alias irb="irb --simple-prompt"
+fi
+
+if [[ -x `which pry` ]]; then
+  alias pry="pry --simple-prompt"
+fi
 
 if [[ -f /etc/zsh_command_not_found ]]; then
   . /etc/zsh_command_not_found
@@ -304,7 +317,8 @@ esac
 # fi
 
 # rbenv
-if [[ -x `whence rbenv` ]]; then
+if [[ -d ${HOME}/.rbenv ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
@@ -330,10 +344,12 @@ autoload -Uz compinit; compinit -u
 # ignore completion commands
 compdef -d rake
 
-
 # homebrew zsh functions
 if [[ -d /usr/local/share/zsh/site-functions ]]; then
   for CONF in /usr/local/share/zsh/site-functions/*; do
     source $CONF
   done
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
