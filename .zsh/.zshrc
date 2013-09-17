@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
