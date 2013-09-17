@@ -7,3 +7,7 @@ SAVEHIST=1000000
 # PROMPT
 PROMPT="%n@%F{magenta}%m%f:%B%F{cyan}%~%f%b%# "
 RPROMPT="%1(v|%F{green}%1v%f|)"
+
+# completion
+autoload -Uz compinit
+compinit -u
