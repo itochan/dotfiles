@@ -48,6 +48,7 @@ set nocompatible
   Bundle 'mattn/webapi-vim'
   Bundle 'mattn/favstar-vim'
   Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'slim-template/vim-slim'
 
   filetype plugin indent on
 "}}}
@@ -227,6 +228,9 @@ if has('gui_running')
     let g:quickrun_config['*'] = {"runmode": "async:remote:vimproc"}
   endif
 
+  " set no visualbell
+  set visualbell t_vb=
+
 endif
 
 au FileType c setl ts=8 sw=4 noexpandtab
@@ -260,6 +264,9 @@ if has('gui_macvim')
   nnoremap <C-Tab> gt
   nnoremap <C-S-Tab> gT
 endif
+
+" fix double-width characters
+set ambiwidth=double
 
 augroup RubyTrunk
   autocmd!
@@ -378,3 +385,6 @@ let g:favstar_user = 'i315'
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
+
+" unite.vim
+nmap <Leader>f [unite]
