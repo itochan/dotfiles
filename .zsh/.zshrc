@@ -11,3 +11,5 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 # completion
 autoload -Uz compinit
 compinit -u
+
+setopt share_history
