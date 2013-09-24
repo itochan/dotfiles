@@ -2,6 +2,14 @@
 autoload -Uz compinit
 compinit -u
 
+setopt auto_list
+setopt auto_menu
+setopt list_packed
+setopt list_types
+bindkey "^[[Z" reverse-menu-complete
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # vcs_info
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
