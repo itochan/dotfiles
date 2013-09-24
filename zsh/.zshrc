@@ -29,6 +29,8 @@ setopt hist_save_by_copy
 setopt inc_append_history
 setopt share_history
 
+setopt correct
+
 if [ -d ${HOME}/.rbenv ]; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
