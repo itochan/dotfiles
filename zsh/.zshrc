@@ -44,3 +44,5 @@ if [ -d ${HOME}/.rbenv ]; then
   eval "$(rbenv init -)"
   . ~/.rbenv/completions/rbenv.zsh
 fi
+
+[[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
