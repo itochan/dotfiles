@@ -1,1 +1,27 @@
 alias ls='ls --color=auto -F'
+alias l.="ls -d .*"
+alias ll="ls -lh"
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+alias vi="vim"
+alias grep="grep --color=auto"
+alias df="df -H"
+alias du="du -h"
+alias be="bundle exec"
+alias history="history -i"
+alias emacs='echo "Running Emacs..." && sleep 1 && vim'
+
+if [[ -f `which coloredlogcat.py` ]]; then
+  alias logcat='coloredlogcat.py'
+fi
+
+if [[ -x `which irb` ]]; then
+  alias irb="irb --simple-prompt"
+fi
+
+if [[ -x `which pry` ]]; then
+  alias pry="pry --simple-prompt"
+fi
+
+alias -g G='| grep'
