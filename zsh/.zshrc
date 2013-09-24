@@ -39,11 +39,6 @@ setopt share_history
 
 setopt correct
 
-if [ -d ${HOME}/.rbenv ]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-  . ~/.rbenv/completions/rbenv.zsh
-fi
-
+[[ -f ~/dotfiles/zsh/.zshrc_external ]] && . ~/dotfiles/zsh/.zshrc_external
 [[ -f ~/dotfiles/zsh/.zshrc_alias ]] && . ~/dotfiles/zsh/.zshrc_alias
 [[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
