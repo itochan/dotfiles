@@ -34,6 +34,7 @@ SAVEHIST=1000000
 setopt append_history
 setopt extended_history
 setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt hist_save_by_copy
 setopt inc_append_history
 setopt share_history
