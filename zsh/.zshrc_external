@@ -1,8 +1,15 @@
+zshrc_dir=`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
+
 # autojump
 if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
   . ~/.autojump/etc/profile.d/autojump.zsh
 
   export AUTOJUMP_KEEP_SYMLINKS=1
+fi
+
+# zsh-syntax-highlighting
+if [[ -f $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  . $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # rbenv
