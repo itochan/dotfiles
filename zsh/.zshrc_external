@@ -1,3 +1,10 @@
+# autojump
+if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
+  . ~/.autojump/etc/profile.d/autojump.zsh
+
+  export AUTOJUMP_KEEP_SYMLINKS=1
+fi
+
 # rbenv
 if [[ -d $HOME/.rbenv ]]; then
   export PATH=$HOME/.rbenv/bin:$PATH
