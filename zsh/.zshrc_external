@@ -18,3 +18,8 @@ if [[ -d $HOME/.rbenv ]]; then
   eval "$(rbenv init -)"
   . ~/.rbenv/completions/rbenv.zsh
 fi
+
+# Android SDK
+if [[ -d ~/local/android-sdks ]]; then
+  export PATH=~/local/android-sdks/platform-tools:~/local/android-sdks/tools:~/local/android-sdks/tools/proguard/bin:$PATH
+fi
