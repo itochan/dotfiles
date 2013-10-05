@@ -1,4 +1,5 @@
 # completion
+fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -u
 
