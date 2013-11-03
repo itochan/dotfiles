@@ -1,6 +1,7 @@
 .vim/bundle
 *.tmp
 *.swp
+*.swo
 .zsh/cache
 
 .DS_Store
