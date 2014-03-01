@@ -13,6 +13,7 @@ alias emacs='echo "Running Emacs..." && sleep 1 && vim'
 alias zmv='noglob zmv -v -W'
 alias zcp='noglob zmv -v -W -C'
 alias zln='noglob zmv -v -W -L'
+alias wget='wget --content-disposition'
 
 if [[ -f `which coloredlogcat.py` ]]; then
   alias logcat='coloredlogcat.py'
