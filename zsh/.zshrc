@@ -5,6 +5,7 @@ compinit -u
 
 setopt auto_list
 setopt auto_menu
+setopt auto_pushd
 setopt nolistbeep
 setopt list_packed
 setopt list_types
