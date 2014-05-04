@@ -49,6 +49,7 @@ set nocompatible
   Bundle 'mattn/favstar-vim'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'slim-template/vim-slim'
+  Bundle 'tir_black'
 
   filetype plugin indent on
 "}}}
@@ -247,7 +248,7 @@ au FileType java setl ts=4 sw=4
 
 "color settings
 set t_Co=256
-colorscheme mrkn256
+colorscheme tir_black
 
 "statusline settings
 set laststatus=2
