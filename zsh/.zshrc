@@ -1,8 +1,3 @@
-# completion
-fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
-autoload -Uz compinit
-compinit -u
-
 setopt auto_list
 setopt auto_menu
 setopt auto_pushd
@@ -49,3 +44,8 @@ setopt correct
 [[ -f ~/dotfiles/zsh/.zshrc_external ]] && . ~/dotfiles/zsh/.zshrc_external
 [[ -f ~/dotfiles/zsh/.zshrc_alias ]] && . ~/dotfiles/zsh/.zshrc_alias
 [[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
+
+# completion
+fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
+autoload -Uz compinit
+compinit -u
