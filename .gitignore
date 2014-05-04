@@ -4,5 +4,7 @@
 *.swo
 .zsh/cache
 
+*.iml
+
 .DS_Store
 Thumbs.db
