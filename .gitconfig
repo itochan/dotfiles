@@ -17,6 +17,7 @@
 	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
 [core]
 	excludesfile = /Users/itochan/.gitignore
+	editor = vim
 [push]
 	default = tracking
 [pull]
