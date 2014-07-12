@@ -49,3 +49,6 @@ setopt correct
 fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -u
+
+# added by travis gem
+[ -f /Users/itochan/.travis/travis.sh ] && source /Users/itochan/.travis/travis.sh
