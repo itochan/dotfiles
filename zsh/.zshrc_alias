@@ -9,7 +9,6 @@ alias df="df -H"
 alias du="du -h"
 alias be="bundle exec"
 alias history="history -i"
-alias emacs='echo "Running Emacs..." && sleep 1 && vim'
 alias zmv='noglob zmv -v -W'
 alias zcp='noglob zmv -v -W -C'
 alias zln='noglob zmv -v -W -L'
