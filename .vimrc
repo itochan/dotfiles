@@ -1,13 +1,13 @@
-"itochan's vimrc
+" itochan's vimrc
 
 set nocompatible
 
-"vundle settings {{{
+" vundle settings {{{
   filetype off
   set rtp+=~/.vim/vundle/
   call vundle#rc()
 
-  "Bundle 'gmarik/vundle'
+  " Bundle 'gmarik/vundle'
   Bundle 'mrkn/mrkn256.vim'
   Bundle 'Shougo/neocomplcache'
   Bundle 'Shougo/unite.vim'
@@ -52,29 +52,29 @@ set nocompatible
   Bundle 'tir_black'
 
   filetype plugin indent on
-"}}}
+" }}}
 
 set number
 set backspace=2
 
-"- -> >>- ---> {{{
+" - -> >>- ---> {{{
   set list
   set listchars=tab:>-,trail:-,extends:>,precedes:<
-"}}}
+" }}}
 
-"syntax settings
+" syntax settings
 syntax enable
 
 " lang
 lang en_US.UTF-8
 
-"neocomplcache settings {{{
+" neocomplcache settings {{{
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplcache.
   let g:neocomplcache_enable_at_startup = 1
   " Use smartcase.
-  "let g:neocomplcache_enable_smart_case = 1
+  " let g:neocomplcache_enable_smart_case = 1
   let g:neocomplcache_enable_smart_case = 0
   " Use camel case completion.
   let g:neocomplcache_enable_camel_case_completion = 1
@@ -104,11 +104,11 @@ lang en_US.UTF-8
   inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
   " SuperTab like snippets behavior.
-  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+  " imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
   " Recommended key-mappings.
   " <CR>: close popup and save indent.
-  "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+  " inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
   " <C-h>, <BS>: close popup and delete backword char.
@@ -118,14 +118,14 @@ lang en_US.UTF-8
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
   " AutoComplPop like behavior.
-  "let g:neocomplcache_enable_auto_select = 1
+  " let g:neocomplcache_enable_auto_select = 1
 
   " Shell like behavior(not recommended).
-  "set completeopt+=longest
-  "let g:neocomplcache_enable_auto_select = 1
-  "let g:neocomplcache_disable_auto_complete = 1
-  "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-  "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+  " set completeopt+=longest
+  " let g:neocomplcache_enable_auto_select = 1
+  " let g:neocomplcache_disable_auto_complete = 1
+  " inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
+  " inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
   " Enable omni completion.
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -143,20 +143,20 @@ lang en_US.UTF-8
   let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
   let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
   let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-  "Rubyのオムニ補完を設定(ft-ruby-omni)
+  " Rubyのオムニ補完を設定(ft-ruby-omni)
   let g:rubycomplete_buffer_loading = 1
   let g:rubycomplete_classes_in_global = 1
   let g:rubycomplete_rails = 1
-"}}}
+" }}}
 
-"keymap settings
-"http://twitter.com/#!/mactkg/statuses/78873595920646145
+" keymap settings
+" http://twitter.com/#!/mactkg/statuses/78873595920646145
 map <C-j> <C-d>
 map <C-k> <C-u>
 map <C-h> 0
 map <C-l> $
 
-"search settings
+" search settings
 set ignorecase
 set smartcase
 set wrapscan
@@ -164,11 +164,11 @@ set incsearch
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-"Tab completion
+" Tab completion
 set wildmenu
 set wildmode=list,full
 
-"backup settings
+" backup settings
 set backup
 if has('win32') || has('win64')
   set backupdir=%TEMP%
@@ -176,7 +176,7 @@ else
   set backupdir=/tmp
 endif
 
-"undo settings
+" undo settings
 if has('persistent_undo')
   set undodir=./.vimundo,~/.vimundo
   augroup vimrc-undofile
@@ -188,18 +188,18 @@ endif
 " tags settings
 set tags=tags,.tags
 
-"mouse settings
+" mouse settings
 set mouse=i
 
-"encoding settings
+" encoding settings
 set fenc=utf-8
 set fencs=ucs_bom,utf-8,euc-jp,iso-2022-jp,cp932 ",utf-16,utf-16le
 
-"gvim settings
+" gvim settings
 if has('gui_running')
   set guifont=Source\ Code\ Pro:h12,Monaco:h12
 
-  "http://vim-users.jp/2010/01/hack120/
+  " http://vim-users.jp/2010/01/hack120/
   let g:save_window_file = expand('~/.vimwinpos')
   augroup SaveWindow
     autocmd!
@@ -218,13 +218,13 @@ if has('gui_running')
     execute 'source' g:save_window_file
   endif
 
-  "clipboard settings
+  " clipboard settings
   set clipboard=unnamed,autoselect
 
-  "mouse settings
+  " mouse settings
   set mouse=a
 
-  "quickrun.vim settings
+  " quickrun.vim settings
   if !exists('g:quickrun_config')
     let g:quickrun_config['*'] = {"runmode": "async:remote:vimproc"}
   endif
@@ -235,29 +235,29 @@ if has('gui_running')
 endif
 
 au FileType c setl ts=8 sw=4 noexpandtab
-"indent settings {{{
+" indent settings {{{
   set autoindent
   set cindent
   set tabstop=2
   set shiftwidth=2
   set smarttab
   set expandtab
-"}}}
+" }}}
 au FileType objc setl ts=4 sw=4
 au FileType java setl ts=4 sw=4
 
-"color settings
+" color settings
 set t_Co=256
 colorscheme tir_black
 
-"statusline settings
+" statusline settings
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=\ [%v,%l/%L]\ %P
 
-"vimproc settings
+" vimproc settings
 nnoremap :! :call vimproc#system('
 
-"macvim settings
+" macvim settings
 if has('gui_macvim')
   set guioptions-=T
   set transparency=20
@@ -361,13 +361,13 @@ au BufNewFile,BufRead /etc/nginx/*.conf*,/etc/nginx/sites-*/*,/opt/nginx/conf/*.
 au BufNewFile,BufRead *.css*,*.htm,*.html :ColorHighlight
 
 " NERD_commenter.vim
-"http://blog.blueblack.net/item_133
-"<Leader>xでコメントをトグル(NERD_commenter.vim)
+" http://blog.blueblack.net/item_133
+" <Leader>xでコメントをトグル(NERD_commenter.vim)
 map <Leader>x ,c<space>
-"未対応ファイルタイプのエラーメッセージを表示しない
+" 未対応ファイルタイプのエラーメッセージを表示しない
 let NERDShutUp=1
 
-"Scouter
+" Scouter
 function! Scouter(file, ...)
   let pat = '^\s*$\|^\s*"'
   let lines = readfile(a:file)
