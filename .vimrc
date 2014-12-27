@@ -248,7 +248,14 @@ au FileType java setl ts=4 sw=4
 
 " color settings
 set t_Co=256
-colorscheme tir_black
+
+" http://d.hatena.ne.jp/yayugu/20110918/1316363220
+let scheme = 'tir_black'
+augroup guicolorscheme
+  autocmd!
+  execute 'autocmd GUIEnter * colorscheme' scheme
+augroup END
+execute 'colorscheme' scheme
 
 " statusline settings
 set laststatus=2
