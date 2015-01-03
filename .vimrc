@@ -27,7 +27,6 @@ endif
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'lilydjwg/colorizer'
   NeoBundle 'cakebaker/scss-syntax.vim'
-  NeoBundle 'YankRing.vim'
   NeoBundle 'sjl/gundo.vim'
   NeoBundle 't9md/vim-textmanip'
   NeoBundle 'kana/vim-operator-user'
