@@ -7,20 +7,14 @@ set nocompatible
   set rtp+=~/.vim/vundle/
   call vundle#rc()
 
-  " Bundle 'gmarik/vundle'
-  Bundle 'mrkn/mrkn256.vim'
   Bundle 'Shougo/neocomplcache'
-  Bundle 'Shougo/unite.vim'
   Bundle 'Align'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'ruby-matchit'
   Bundle 'thinca/vim-quickrun'
-  Bundle 'Shougo/vimproc'
-  Bundle 'Shougo/vimshell'
   Bundle 'pangloss/vim-javascript'
   Bundle 'nono/jquery.vim'
   Bundle 'nginx.vim'
-  Bundle 'basyura/jslint.vim'
   Bundle 'tpope/vim-rails'
   Bundle 'hallison/vim-ruby-sinatra'
   Bundle 'tpope/vim-haml'
@@ -46,7 +40,6 @@ set nocompatible
   Bundle 'scrooloose/syntastic'
   Bundle 'msanders/cocoa.vim'
   Bundle 'mattn/webapi-vim'
-  Bundle 'mattn/favstar-vim'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'slim-template/vim-slim'
   Bundle 'tir_black'
@@ -343,14 +336,6 @@ augroup CRuby
   autocmd BufWinEnter,BufNewFile *.{c,cc,cpp,h,hh,hpp} call s:CRuby_ext_setup()
 augroup END
 
-" jslint.vim
-autocmd FileType javascript call s:javascript_filetype_settings()
-function! s:javascript_filetype_settings()
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
-
 " Sinatra
 function! SinatraInlineTemplateSyntax()
   exec 'unlet b:current_syntax'
@@ -387,9 +372,6 @@ command! -bar -bang -nargs=? -complete=file Scouter
 \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 command! -bar -bang -nargs=? -complete=file GScouter
 \        echo Scouter(empty(<q-args>) ? $MYGVIMRC : expand(<q-args>), <bang>0)
-
-" favstar.vim
-let g:favstar_user = 'i315'
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
