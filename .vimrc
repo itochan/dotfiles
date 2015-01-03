@@ -15,7 +15,6 @@ endif
   NeoBundle 'Align'
   NeoBundle 'vim-ruby/vim-ruby'
   NeoBundle 'ruby-matchit'
-  NeoBundle 'thinca/vim-quickrun'
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'nono/jquery.vim'
   NeoBundle 'nginx.vim'
@@ -222,11 +221,6 @@ if has('gui_running')
   " mouse settings
   set mouse=a
 
-  " quickrun.vim settings
-  if !exists('g:quickrun_config')
-    let g:quickrun_config['*'] = {"runmode": "async:remote:vimproc"}
-  endif
-
   " set no visualbell
   set visualbell t_vb=
 
@@ -258,9 +252,6 @@ execute 'colorscheme' scheme
 " statusline settings
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%y%=\ [%v,%l/%L]\ %P
-
-" vimproc settings
-nnoremap :! :call vimproc#system('
 
 " macvim settings
 if has('gui_macvim')
