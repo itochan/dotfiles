@@ -1,49 +1,54 @@
 " itochan's vimrc
 
-set nocompatible
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" vundle settings {{{
-  filetype off
-  set rtp+=~/.vim/vundle/
-  call vundle#rc()
+" NeoBundle {{{
+  call neobundle#begin(expand('~/.vim/bundle/'))
 
-  Bundle 'Shougo/neocomplcache'
-  Bundle 'Align'
-  Bundle 'vim-ruby/vim-ruby'
-  Bundle 'ruby-matchit'
-  Bundle 'thinca/vim-quickrun'
-  Bundle 'pangloss/vim-javascript'
-  Bundle 'nono/jquery.vim'
-  Bundle 'nginx.vim'
-  Bundle 'tpope/vim-rails'
-  Bundle 'hallison/vim-ruby-sinatra'
-  Bundle 'tpope/vim-haml'
-  Bundle 'tpope/vim-surround'
-  Bundle 'othree/html5.vim'
-  Bundle 'hail2u/vim-css3-syntax'
-  Bundle 'lilydjwg/colorizer'
-  Bundle 'cakebaker/scss-syntax.vim'
-  Bundle 'YankRing.vim'
-  Bundle 'sjl/gundo.vim'
-  Bundle 't9md/vim-textmanip'
-  Bundle 'kana/vim-operator-user'
-  Bundle 'tyru/operator-html-escape.vim'
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-bundler'
-  Bundle 'tpope/vim-git'
-  Bundle 'tpope/vim-rake'
-  Bundle 'tpope/vim-markdown'
-  Bundle 'mattn/gist-vim'
-  Bundle 'sudo.vim'
-  Bundle 'The-NERD-Commenter'
-  Bundle 'acustodioo/vim-tmux'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'msanders/cocoa.vim'
-  Bundle 'mattn/webapi-vim'
-  Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'slim-template/vim-slim'
-  Bundle 'tir_black'
+  " Let NeoBundle manage NeoBundle
+  NeoBundleFetch 'Shougo/neobundle.vim'
 
+  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'Align'
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'ruby-matchit'
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'nono/jquery.vim'
+  NeoBundle 'nginx.vim'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'hallison/vim-ruby-sinatra'
+  NeoBundle 'tpope/vim-haml'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'othree/html5.vim'
+  NeoBundle 'hail2u/vim-css3-syntax'
+  NeoBundle 'lilydjwg/colorizer'
+  NeoBundle 'cakebaker/scss-syntax.vim'
+  NeoBundle 'YankRing.vim'
+  NeoBundle 'sjl/gundo.vim'
+  NeoBundle 't9md/vim-textmanip'
+  NeoBundle 'kana/vim-operator-user'
+  NeoBundle 'tyru/operator-html-escape.vim'
+  NeoBundle 'tpope/vim-endwise'
+  NeoBundle 'tpope/vim-bundler'
+  NeoBundle 'tpope/vim-git'
+  NeoBundle 'tpope/vim-rake'
+  NeoBundle 'tpope/vim-markdown'
+  NeoBundle 'mattn/gist-vim'
+  NeoBundle 'sudo.vim'
+  NeoBundle 'The-NERD-Commenter'
+  NeoBundle 'acustodioo/vim-tmux'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'msanders/cocoa.vim'
+  NeoBundle 'mattn/webapi-vim'
+  NeoBundle 'nathanaelkane/vim-indent-guides'
+  NeoBundle 'slim-template/vim-slim'
+  NeoBundle 'tir_black'
+
+  call neobundle#end()
   filetype plugin indent on
 " }}}
 
