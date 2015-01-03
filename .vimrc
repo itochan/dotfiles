@@ -46,6 +46,7 @@ endif
   NeoBundle 'nathanaelkane/vim-indent-guides'
   NeoBundle 'slim-template/vim-slim'
   NeoBundle 'tir_black'
+  NeoBundle 'kien/ctrlp.vim'
 
   call neobundle#end()
   filetype plugin indent on
