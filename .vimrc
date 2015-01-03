@@ -378,3 +378,8 @@ let g:indent_guides_enable_on_vim_startup=1
 
 " unite.vim
 nmap <Leader>f [unite]
+
+if !exists('loaded_matchit')
+  " enable matchit
+  runtime macros/matchit.vim
+endif
