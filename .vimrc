@@ -194,7 +194,7 @@ set fencs=ucs_bom,utf-8,euc-jp,iso-2022-jp,cp932 ",utf-16,utf-16le
 
 " gvim settings
 if has('gui_running')
-  set guifont=Source\ Code\ Pro:h12,Monaco:h12
+  set guifont=Source\ Code\ Pro:h14,Monaco:h14
 
   " http://vim-users.jp/2010/01/hack120/
   let g:save_window_file = expand('~/.vimwinpos')
