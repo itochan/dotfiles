@@ -1,6 +1,7 @@
 [user]
 	name = Kazunori Jo
 	email = itochan315@gmail.com
+	signingkey = 49D946F3
 [color]
 	ui = true
 [alias]
@@ -31,3 +32,7 @@
 	short = true
 [diff]
        partience = true
+[diff "encrypted"]
+	textconv = hexdump -v -C
+[credential]
+	helper = osxkeychain

@@ -10,3 +10,9 @@
 
 .DS_Store
 Thumbs.db
+
+# rbenv
+.ruby-version
+
+# VS Code
+.vscode

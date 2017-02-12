@@ -11,6 +11,15 @@ endif
   " Let NeoBundle manage NeoBundle
   NeoBundleFetch 'Shougo/neobundle.vim'
 
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \ 'windows' : 'make -f make_mingw32.mak',
+        \ 'cygwin' : 'make -f make_cygwin.mak',
+        \ 'mac' : 'make -f make_mac.mak',
+        \ 'unix' : 'make -f make_unix.mak',
+        \ },
+        \ }
+
   NeoBundle 'Shougo/neocomplcache'
   NeoBundle 'Align'
   NeoBundle 'vim-ruby/vim-ruby'
@@ -46,6 +55,8 @@ endif
   NeoBundle 'slim-template/vim-slim'
   NeoBundle 'tir_black'
   NeoBundle 'kien/ctrlp.vim'
+  NeoBundle 'elzr/vim-json'
+  NeoBundle 'kchmck/vim-coffee-script'
 
   call neobundle#end()
   filetype plugin indent on
@@ -379,3 +390,8 @@ if !exists('loaded_matchit')
   " enable matchit
   runtime macros/matchit.vim
 endif
+
+" vim-coffee-script
+au BufNewFile,BufRead *.coffee set filetype=coffee
+
+syntax on

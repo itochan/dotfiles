@@ -25,3 +25,8 @@ fi
 if [[ -d ~/local/android-sdks ]]; then
   export PATH=~/local/android-sdks/platform-tools:~/local/android-sdks/tools:~/local/android-sdks/tools/proguard/bin:$PATH
 fi
+
+# Ansible
+if [[ -x `which ansible` ]]; then
+  export ANSIBLE_HOSTS=~/ansible_hosts
+fi
