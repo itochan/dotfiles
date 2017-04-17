@@ -24,6 +24,7 @@ fi
 # Android SDK
 if [[ -d ~/local/android-sdks ]]; then
   export PATH=~/local/android-sdks/platform-tools:~/local/android-sdks/tools:~/local/android-sdks/tools/proguard/bin:$PATH
+  export ANDROID_HOME=~/local/android-sdks
 fi
 
 # Ansible
