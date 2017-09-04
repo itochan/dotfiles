@@ -10,9 +10,9 @@
 	ci = commit
 	br = branch
 	st = status -sb
-  br = branch
-  di = diff
-  dic = diff --cached
+	br = branch
+	di = diff
+	dic = diff --cached
 	pl = pull
 	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
 [core]
