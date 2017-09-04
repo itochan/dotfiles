@@ -22,9 +22,16 @@ if [[ -d $HOME/.rbenv ]]; then
 fi
 
 # Android SDK
+if [[ -d ~/Library/Android/sdk ]]; then
+  location=~/Library/Android/sdk
+  export PATH=$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
+  export ANDROID_HOME=$location
+fi
+
 if [[ -d ~/local/android-sdks ]]; then
-  export PATH=~/local/android-sdks/platform-tools:~/local/android-sdks/tools:~/local/android-sdks/tools/proguard/bin:$PATH
-  export ANDROID_HOME=~/local/android-sdks
+  location=~/local/android-sdks
+  export PATH=$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
+  export ANDROID_HOME=$location
 fi
 
 # Ansible
