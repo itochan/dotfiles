@@ -8,7 +8,6 @@
 	tree = log --graph --date=short --pretty='format:%C(yellow)%h %Creset%cd %s %Cgreen(%an)%Creset %Cred%d%Creset'
 	co = checkout
 	ci = commit
-	st = status
 	br = branch
 	st = status -sb
   br = branch
