@@ -8,3 +8,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 if [[ -x `which gist` ]]; then
   alias gist="gist -o"
 fi
+
+# Google Cloud SDK
+if [[ -d /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin ]]; then
+  export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+fi
