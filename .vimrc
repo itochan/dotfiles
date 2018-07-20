@@ -57,6 +57,7 @@ endif
   NeoBundle 'kien/ctrlp.vim'
   NeoBundle 'elzr/vim-json'
   NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'zerowidth/vim-copy-as-rtf'
 
   call neobundle#end()
   filetype plugin indent on
