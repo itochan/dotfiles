@@ -38,3 +38,9 @@ fi
 if [[ -x `which ansible` ]]; then
   export ANSIBLE_HOSTS=~/ansible_hosts
 fi
+
+# ESP32
+if [[ -d ~/esp/xtensa-esp32-elf ]]; then
+  export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
+  export IDF_PATH=~/esp/esp-idf
+fi
