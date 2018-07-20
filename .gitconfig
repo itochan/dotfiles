@@ -1,7 +1,7 @@
 [user]
 	name = Kazunori Jo
 	email = itochan315@gmail.com
-	signingkey = 2E389FCD49D946F3
+	signingkey = 49D946F3
 [color]
 	ui = true
 [alias]
@@ -36,4 +36,4 @@
 [credential]
 	helper = osxkeychain
 [gpg]
-	program = gpg2
+	program = gpg
