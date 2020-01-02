@@ -1,6 +1,3 @@
-[submodule "autojump"]
-	path = autojump
-	url = git://github.com/joelthelion/autojump.git
 [submodule ".zsh/compfunc/hub-zsh-completion"]
 	path = .zsh/compfunc/hub-zsh-completion
 	url = git://github.com/glidenote/hub-zsh-completion.git
