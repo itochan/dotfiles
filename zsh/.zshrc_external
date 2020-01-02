@@ -14,17 +14,16 @@ if [[ -f $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   . $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-# Homebrew's ruby
-if [[ -x `which ruby` ]]; then
-  if [[ -d `brew --prefix ruby` ]]; then
-    export PATH=$(brew --prefix ruby)/bin:$PATH
-  fi
-fi
+path=(
+  # Homebrew's ruby
+  /usr/local/opt/ruby/bin(N-/)
+
+  $path
+)
 
 # rbenv
 if [[ -d $HOME/.rbenv ]]; then
   eval "$(rbenv init -)"
-  . $(brew --prefix rbenv)/completions/rbenv.zsh
 fi
 
 # Android SDK
@@ -41,7 +40,7 @@ if [[ -d ~/local/android-sdks ]]; then
 fi
 
 # Ansible
-if [[ -x `which ansible` ]]; then
+if (($+commands[ansible])); then
   export ANSIBLE_HOSTS=~/ansible_hosts
 fi
 
