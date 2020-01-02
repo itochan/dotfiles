@@ -13,3 +13,6 @@ bind h prev
 bind j next
 bind l windowlist
 defbce on
+
+# For useful scroll
+termcapinfo xterm* ti@:te@

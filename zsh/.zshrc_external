@@ -14,11 +14,17 @@ if [[ -f $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   . $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# Homebrew's ruby
+if [[ -x `which ruby` ]]; then
+  if [[ -d `brew --prefix ruby` ]]; then
+    export PATH=$(brew --prefix ruby)/bin:$PATH
+  fi
+fi
+
 # rbenv
 if [[ -d $HOME/.rbenv ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
-  . ~/.rbenv/completions/rbenv.zsh
+  . $(brew --prefix rbenv)/completions/rbenv.zsh
 fi
 
 # Android SDK
@@ -30,7 +36,7 @@ fi
 
 if [[ -d ~/local/android-sdks ]]; then
   location=~/local/android-sdks
-  export PATH=$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
+  export PATH=$location/emulator:$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
   export ANDROID_HOME=$location
 fi
 

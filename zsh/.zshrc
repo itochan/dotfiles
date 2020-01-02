@@ -53,3 +53,8 @@ compinit -u
 # added by travis gem
 [ -f /Users/itochan/.travis/travis.sh ] && source /Users/itochan/.travis/travis.sh
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+if [[ "$PROFILE_STARTUP" == true ]]; then
+  unsetopt xtrace
+  exec 2>&3 3>&-
+fi
