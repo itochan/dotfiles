@@ -1,11 +1,9 @@
-zshrc_dir=`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
-
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # zsh-syntax-highlighting
-if [[ -f $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  . $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 path=(
