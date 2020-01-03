@@ -1,52 +1,39 @@
-zshrc_dir=`readlink $HOME/.zshrc | sed 's/\/[^\/]*$//'`
-
 # autojump
-if [[ -f ~/.autojump/etc/profile.d/autojump.zsh ]]; then
-  . ~/.autojump/etc/profile.d/autojump.zsh
-
-  export AUTOJUMP_KEEP_SYMLINKS=1
-
-  fpath=(~/.autojump/functions $fpath)
-fi
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # zsh-syntax-highlighting
-if [[ -f $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  . $zshrc_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Homebrew's ruby
-if [[ -x `which ruby` ]]; then
-  if [[ -d `brew --prefix ruby` ]]; then
-    export PATH=$(brew --prefix ruby)/bin:$PATH
-  fi
-fi
+local android_location=~/local/android-sdks
+path=(
+  # Homebrew's ruby
+  /usr/local/opt/ruby/bin(N-/)
 
-# rbenv
-if [[ -d $HOME/.rbenv ]]; then
-  eval "$(rbenv init -)"
-  . $(brew --prefix rbenv)/completions/rbenv.zsh
-fi
+  # Android SDK
+  $android_location/emulator(N-/)
+  $android_location/platform-tools(N-/)
+  $android_location/tools(N-/)
+
+  # ESP32
+  $HOME/esp/xtensa-esp32-elf/bin(N-/)
+
+  $path
+)
 
 # Android SDK
-if [[ -d ~/Library/Android/sdk ]]; then
-  location=~/Library/Android/sdk
-  export PATH=$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
-  export ANDROID_HOME=$location
-fi
+export ANDROID_HOME=$android_location(N-/)
 
-if [[ -d ~/local/android-sdks ]]; then
-  location=~/local/android-sdks
-  export PATH=$location/emulator:$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
-  export ANDROID_HOME=$location
+# rbenv
+if (( $+commands[rbenv] )); then
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 # Ansible
-if [[ -x `which ansible` ]]; then
+if (( $+commands[ansible] )); then
   export ANSIBLE_HOSTS=~/ansible_hosts
 fi
 
 # ESP32
-if [[ -d ~/esp/xtensa-esp32-elf ]]; then
-  export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
-  export IDF_PATH=~/esp/esp-idf
-fi
+export IDF_PATH=~/esp/esp-idf(N-/)

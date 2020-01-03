@@ -45,14 +45,8 @@ setopt correct
 [[ -f ~/dotfiles/zsh/.zshrc_alias ]] && . ~/dotfiles/zsh/.zshrc_alias
 [[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
 
-# completion
-fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -u
-
-# added by travis gem
-[ -f /Users/itochan/.travis/travis.sh ] && source /Users/itochan/.travis/travis.sh
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 if [[ "$PROFILE_STARTUP" == true ]]; then
   unsetopt xtrace
