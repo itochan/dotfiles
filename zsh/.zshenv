@@ -7,12 +7,12 @@ fi
 
 export LANG=en_US.UTF-8
 
-export GOPATH=$HOME/go(-N/)
+if [[ -f $HOME/go ]]; && export GOPATH=$HOME/go
 path=(
-  $HOME/local/bin(-N/)
-  /usr/local/bin(-N/)
-  /usr/local/sbin(-N/)
-  $GOPATH/bin(-N/)
+  $HOME/local/bin(N-/)
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  $GOPATH/bin(N-/)
   $path
 )
 
