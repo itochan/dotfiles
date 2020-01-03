@@ -45,8 +45,6 @@ setopt correct
 [[ -f ~/dotfiles/zsh/.zshrc_alias ]] && . ~/dotfiles/zsh/.zshrc_alias
 [[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
 
-# completion
-fpath=(~/dotfiles/zsh/functions/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -u
 
