@@ -27,7 +27,7 @@ export ANDROID_HOME=$android_location(N-/)
 
 # rbenv
 if (( $+commands[rbenv] )); then
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 # Ansible
