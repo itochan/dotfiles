@@ -14,15 +14,11 @@ alias zcp='noglob zmv -v -W -C'
 alias zln='noglob zmv -v -W -L'
 alias wget='wget --content-disposition'
 
-if [[ -f `which coloredlogcat.py` ]]; then
-  alias logcat='coloredlogcat.py'
-fi
-
-if (($+commands[irb])); then
+if (( $+commands[irb] )); then
   alias irb="irb --simple-prompt"
 fi
 
-if (($+commands[pry])); then
+if (( $+commands[pry] )); then
   alias pry="pry --simple-prompt"
 fi
 

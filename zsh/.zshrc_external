@@ -6,32 +6,34 @@
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+local android_location=~/local/android-sdks
 path=(
   # Homebrew's ruby
   /usr/local/opt/ruby/bin(N-/)
 
+  # Android SDK
+  $android_location/emulator(N-/)
+  $android_location/platform-tools(N-/)
+  $android_location/tools(N-/)
+
+  # ESP32
+  $HOME/esp/xtensa-esp32-elf/bin(N-/)
+
   $path
 )
 
+# Android SDK
+export ANDROID_HOME=$android_location(N-/)
+
 # rbenv
-if [[ -d $HOME/.rbenv ]]; then
+if (( $+commands[rbenv] )); then
   eval "$(rbenv init -)"
 fi
 
-# Android SDK
-if [[ -d ~/local/android-sdks ]]; then
-  location=~/local/android-sdks
-  export PATH=$location/emulator:$location/platform-tools:$location/tools:$location/proguard/bin:$PATH
-  export ANDROID_HOME=$location
-fi
-
 # Ansible
-if (($+commands[ansible])); then
+if (( $+commands[ansible] )); then
   export ANSIBLE_HOSTS=~/ansible_hosts
 fi
 
 # ESP32
-if [[ -d ~/esp/xtensa-esp32-elf ]]; then
-  export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin
-  export IDF_PATH=~/esp/esp-idf
-fi
+export IDF_PATH=~/esp/esp-idf(N-/)
