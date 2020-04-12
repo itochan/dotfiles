@@ -25,9 +25,9 @@ path=(
 # Android SDK
 export ANDROID_HOME=$android_location(N-/)
 
-# rbenv
-if (( $+commands[rbenv] )); then
-  eval "$(rbenv init - --no-rehash)"
+# anyenv
+if (( $+commands[anyenv] )); then
+  eval "$(anyenv init -)"
 fi
 
 # Ansible
