@@ -118,7 +118,7 @@ brew "ruby"
 brew "simutrans"
 brew "smartmontools"
 brew "speedtest-cli"
-brew "ssh-copy-id"
+brew "ssh-copy-id", link: true
 brew "stubby", link: false
 brew "subversion"
 brew "swftools"
