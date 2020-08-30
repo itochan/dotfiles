@@ -6,7 +6,7 @@
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-local android_location=~/local/android-sdks
+local android_location=(~/Library/Android/sdk(N-/))
 path=(
   # Homebrew's ruby
   /usr/local/opt/ruby/bin(N-/)
@@ -23,7 +23,7 @@ path=(
 )
 
 # Android SDK
-export ANDROID_HOME=$android_location(N-/)
+export ANDROID_HOME=$android_location
 
 # anyenv
 if (( $+commands[anyenv] )); then
