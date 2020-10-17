@@ -19,6 +19,9 @@ path=(
   # ESP32
   $HOME/esp/xtensa-esp32-elf/bin(N-/)
 
+  # Dart
+  $HOME/.pub-cache/bin(N-/)
+
   $path
 )
 
