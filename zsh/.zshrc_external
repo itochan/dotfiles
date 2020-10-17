@@ -21,6 +21,8 @@ path=(
 
   # Dart
   $HOME/.pub-cache/bin(N-/)
+  # fvm
+  $HOME/fvm/default/bin(N-/)
 
   $path
 )
