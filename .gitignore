@@ -11,8 +11,9 @@
 .DS_Store
 Thumbs.db
 
-# rbenv
+# anyenv
 .ruby-version
+.java-version
 
 # VS Code
 .vscode
