@@ -8,6 +8,9 @@
 
 local android_location=(~/Library/Android/sdk(N-/))
 path=(
+  # Homebrew for ARM
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
   # Homebrew's ruby
   /usr/local/opt/ruby/bin(N-/)
 
@@ -23,6 +26,10 @@ path=(
   $HOME/.pub-cache/bin(N-/)
   # fvm
   $HOME/fvm/default/bin(N-/)
+
+  # Git
+  /usr/local/share/git-core/contrib/diff-highlight(N-/)
+  /opt/homebrew/share/git-core/contrib/diff-highlight(N-/)
 
   $path
 )
