@@ -51,3 +51,5 @@
 [ghq]
 	root = ~/go/src
 	root = ~/src
+[includeIf "gitdir:~/src/github.com/ca-love/"]
+	path = ~/.config/git/cyberagent
