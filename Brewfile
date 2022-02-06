@@ -4,18 +4,26 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+brew "ansible"
 brew "anyenv"
-brew "python@3.9"
+brew "libpng"
+brew "autoconf"
 brew "autojump"
 brew "automake"
+brew "python@3.9"
 brew "awscli"
 brew "bash"
+brew "freetype"
+brew "pkg-config"
 brew "colordiff"
 brew "coreutils"
 brew "rtmpdump"
-brew "curl"
+brew "zstd"
+brew "dex2jar"
+brew "sdl2"
 brew "ffmpeg"
 brew "gh"
+brew "ghq"
 brew "gibo"
 brew "git"
 brew "go"
@@ -28,6 +36,8 @@ brew "iproute2mac"
 brew "jq"
 brew "ktlint"
 brew "mas"
+brew "miniupnpc"
+brew "mitmproxy"
 brew "mosh"
 brew "mtr"
 brew "neofetch"
@@ -40,8 +50,10 @@ brew "perl"
 brew "php"
 brew "rsync"
 brew "ruby"
+brew "smartmontools"
 brew "speedtest-cli"
 brew "streamlink"
+brew "subversion"
 brew "telnet"
 brew "the_silver_searcher"
 brew "tig"
@@ -51,11 +63,12 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "yarn"
-brew "youtube-dl"
+brew "yt-dlp"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "heroku/brew/heroku"
+cask "adobe-creative-cloud"
 cask "android-studio"
 cask "corretto11"
 cask "deepl"
@@ -70,11 +83,14 @@ cask "google-japanese-ime"
 cask "handbrake"
 cask "hot"
 cask "hyper"
+cask "jad"
 cask "jetbrains-toolbox"
 cask "microsoft-auto-update"
 cask "microsoft-edge"
 cask "microsoft-office"
 cask "notion"
+cask "obs"
+cask "postman"
 cask "slack"
 cask "spotify"
 cask "tunnelblick"
@@ -82,3 +98,25 @@ cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
 cask "zoom"
+cask "zulu11"
+mas "Cinebench", id: 1438772273
+mas "Final Cut Pro", id: 424389933
+mas "GarageBand", id: 682658836
+mas "Hidden Bar", id: 1452453066
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Logic Pro", id: 634148309
+mas "Mactracker", id: 430255202
+mas "MARKETSPEED", id: 946680495
+mas "MeetingBar", id: 1532419400
+mas "Messenger", id: 1480068668
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "NextDNS", id: 1464122853
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Speedtest", id: 1153157709
+mas "Tailscale", id: 1475387142
+mas "Telegram", id: 747648890
+mas "Todoist", id: 585829637
+mas "Xcode", id: 497799835
