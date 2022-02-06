@@ -48,3 +48,6 @@
 	diff = diff-highlight | less
 [init]
 	defaultBranch = main
+[ghq]
+	root = ~/go/src
+	root = ~/src
