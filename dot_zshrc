@@ -41,9 +41,9 @@ setopt share_history
 
 setopt correct
 
-[[ -f ~/dotfiles/zsh/.zshrc_external ]] && . ~/dotfiles/zsh/.zshrc_external
-[[ -f ~/dotfiles/zsh/.zshrc_alias ]] && . ~/dotfiles/zsh/.zshrc_alias
-[[ -f ~/dotfiles/zsh/.zshrc_`uname` ]] && . ~/dotfiles/zsh/.zshrc_`uname`
+[[ -f ~/.zshrc_external ]] && . ~/.zshrc_external
+[[ -f ~/.zshrc_alias ]] && . ~/.zshrc_alias
+[[ -f ~/.zshrc_`uname` ]] && . ~/.zshrc_`uname`
 
 autoload -Uz compinit
 compinit -u
