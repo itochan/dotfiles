@@ -38,15 +38,8 @@ path=(
 # Android SDK
 export ANDROID_HOME=$android_location
 
-# anyenv
-if (( $+commands[anyenv] )); then
-  eval "$(anyenv init -)"
-fi
-
-# NVM
-[ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# asdf
+[[ -s "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]] && . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Ansible
 if (( $+commands[ansible] )); then
