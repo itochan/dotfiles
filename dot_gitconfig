@@ -20,6 +20,7 @@
 	editor = vim
 [push]
 	default = tracking
+	autoSetupRemote = true
 [pull]
 	rebase = true
 [branch "develop"]
