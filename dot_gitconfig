@@ -33,8 +33,6 @@
        partience = true
 [diff "encrypted"]
 	textconv = hexdump -v -C
-[credential]
-	helper = osxkeychain
 [gpg]
 	program = gpg
 [filter "lfs"]
