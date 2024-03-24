@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+config.color_scheme = 'Sublette'
+
 config.font = wezterm.font_with_fallback {
   'UDEV Gothic 35',
   'JetBrains Mono',
