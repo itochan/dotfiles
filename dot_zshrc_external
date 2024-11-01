@@ -15,6 +15,7 @@ path=(
   # Homebrew's ruby
   /usr/local/opt/ruby/bin(N-/)
   /opt/homebrew/opt/ruby/bin(N-/)
+  /opt/homebrew/lib/ruby/gems/3.3.0/bin(N-/)
 
   # Android SDK
   $android_location/emulator(N-/)
