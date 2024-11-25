@@ -47,7 +47,7 @@ export ANDROID_HOME=$android_location
 [[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
 
 # mise
-[[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate bash)"
+[[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate zsh)"
 
 # Ansible
 if (( $+commands[ansible] )); then
