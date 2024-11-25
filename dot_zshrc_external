@@ -46,6 +46,9 @@ export ANDROID_HOME=$android_location
 # asdf
 [[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
 
+# mise
+[[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate bash)"
+
 # Ansible
 if (( $+commands[ansible] )); then
   export ANSIBLE_HOSTS=~/ansible_hosts
