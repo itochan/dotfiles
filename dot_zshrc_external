@@ -40,6 +40,11 @@ path=(
   $path
 )
 
+# zsh-completions
+if command -v brew >/dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
 # Android SDK
 export ANDROID_HOME=$android_location
 
