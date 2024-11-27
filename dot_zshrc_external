@@ -9,6 +9,7 @@
 
 local android_location=(~/Library/Android/sdk(N-/))
 path=(
+  ~/.local/bin(N-/)
   # Homebrew for ARM
   /opt/homebrew/bin(N-/)
   /opt/homebrew/sbin(N-/)
@@ -52,7 +53,10 @@ export ANDROID_HOME=$android_location
 [[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
 
 # mise
-[[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate zsh --shims)"
+if type mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh --shims)"
+  eval "$(mise activate zsh)"
+fi
 
 # Ansible
 if (( $+commands[ansible] )); then
