@@ -14,4 +14,23 @@ config.font_size = 16.0
 config.initial_cols = 120
 config.initial_rows = 36
 
+config.keys = {
+  {
+    key = 'LeftArrow',
+    mods = 'META',
+    action = wezterm.action.SendKey {
+      key = 'b',
+      mods = 'META|ALT',
+    },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'META',
+    action = wezterm.action.SendKey {
+      key = 'f',
+      mods = 'META|ALT',
+    },
+  },
+}
+
 return config
