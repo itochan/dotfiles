@@ -59,7 +59,6 @@ export ANDROID_HOME=$android_location
 
 # mise
 if type mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh --shims)"
   eval "$(mise activate zsh)"
 fi
 
