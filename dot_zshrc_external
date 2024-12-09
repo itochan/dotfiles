@@ -46,6 +46,11 @@ if command -v brew >/dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
 
+# Starship
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
+
 # Android SDK
 export ANDROID_HOME=$android_location
 
