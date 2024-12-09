@@ -1,0 +1,8 @@
+[tools]
+flutter = "latest"
+node = "lts"
+pipx = "latest"
+"pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
+python = "latest"
+ruby = "latest"
+usage = "latest"
