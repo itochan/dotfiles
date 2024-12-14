@@ -46,9 +46,6 @@ fi
 # Android SDK
 export ANDROID_HOME=$android_location
 
-# asdf
-[[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
-
 # mise
 if type mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
