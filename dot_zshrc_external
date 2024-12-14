@@ -1,27 +1,23 @@
 # autojump
-[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+[[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 
 # zsh-syntax-highlighting
-[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]] && . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# google-cloud-sdk
+[[ -d $HOMEBREW_PREFIX/share/google-cloud-sdk ]] && . $HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc 
 
 local android_location=(~/Library/Android/sdk(N-/))
 path=(
   ~/.local/bin(N-/)
-  # Homebrew for ARM
-  /opt/homebrew/bin(N-/)
-  /opt/homebrew/sbin(N-/)
-  # Homebrew's ruby
-  /usr/local/opt/ruby/bin(N-/)
-  /opt/homebrew/opt/ruby/bin(N-/)
-  /opt/homebrew/lib/ruby/gems/3.3.0/bin(N-/)
 
   # Android SDK
   $android_location/emulator(N-/)
   $android_location/platform-tools(N-/)
   $android_location/tools(N-/)
+
+  # Git diff-highlight
+  $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/)
 
   # ESP32
   $HOME/esp/xtensa-esp32-elf/bin(N-/)
@@ -31,10 +27,6 @@ path=(
   # fvm
   $HOME/fvm/default/bin(N-/)
 
-  # Git
-  /usr/local/share/git-core/contrib/diff-highlight(N-/)
-  /opt/homebrew/share/git-core/contrib/diff-highlight(N-/)
-
   # Rancher Desktop
   $HOME/.rd/bin(N-/)
 
@@ -42,8 +34,8 @@ path=(
 )
 
 # zsh-completions
-if command -v brew >/dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+if (( $+commands[brew] )); then
+  fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
 fi
 
 # Starship

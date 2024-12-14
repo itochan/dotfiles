@@ -20,6 +20,3 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 if (( $+commands[gist] )); then
   alias gist="gist -o"
 fi
-
-# Google Cloud SDK
-path=(/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin(-N/) $path)
