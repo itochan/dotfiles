@@ -41,6 +41,7 @@ fi
 # Starship
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
+  eval "$(starship completions zsh)"
 fi
 
 # Android SDK
