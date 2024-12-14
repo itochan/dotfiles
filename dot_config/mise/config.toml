@@ -1,5 +1,6 @@
 [tools]
 flutter = "latest"
+go = "latest"
 node = "lts"
 pipx = "latest"
 "pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
