@@ -1,9 +1,15 @@
 [tools]
 flutter = "latest"
 go = "latest"
+java = "zulu-21"
 node = "lts"
+perl = "latest"
 pipx = "latest"
 "pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
+"pipx:speedtest-cli" = "latest"
 python = "latest"
 ruby = "latest"
 usage = "latest"
+
+[alias]
+flutter = "asdf:nyuyuyu/asdf-flutter"
