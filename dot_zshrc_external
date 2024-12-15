@@ -1,3 +1,9 @@
+# Atuin
+if [[ -d $HOME/.atuin ]]; then
+  . $HOME/.atuin/bin/env
+  eval "$(atuin init zsh)"
+fi
+
 # autojump
 [[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 
