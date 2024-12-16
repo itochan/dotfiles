@@ -16,7 +16,6 @@
 	pl = pull
 	fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
 [core]
-	excludesfile = ~/.gitignore
 	editor = vim
 	quotepath = false
 [push]
