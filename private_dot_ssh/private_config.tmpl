@@ -6,4 +6,4 @@ Host *
   IdentityAgent "~/.1password/agent.sock"
   {{- end }}
 
-Include ~/.ssh/config.d/*
+Include {{ .chezmoi.homeDir }}/.ssh/config.d/*
