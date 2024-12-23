@@ -1,0 +1,4 @@
+encryption = "age"
+[age]
+  identity = "key.txt"
+  recipients = "age1k8ufjmal2mz5l8r8x4jccjpgax86dn8q52qhy6ky0vvsusg79fhs9nym92"
