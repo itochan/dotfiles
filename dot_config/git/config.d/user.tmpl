@@ -1,0 +1,8 @@
+{{- range .git.repositories -}}
+	{{- range $owner, $repositories := . }}
+		{{ range $repository := $repositories }}
+[includeIf "gitdir:~/src/github.com/{{ $repository }}/"]
+	path = ~/.config/git/config.d/{{ $owner }}
+		{{- end -}}
+	{{- end -}}
+{{- end }}
