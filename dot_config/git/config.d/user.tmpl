@@ -1,3 +1,4 @@
+{{ if (index . "git") }}
 {{- range .git.repositories -}}
 	{{- range $owner, $repositories := . }}
 		{{ range $repository := $repositories }}
@@ -6,3 +7,4 @@
 		{{- end -}}
 	{{- end -}}
 {{- end }}
+{{ end }}
