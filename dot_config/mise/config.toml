@@ -9,6 +9,7 @@ pipx = "latest"
 "pipx:speedtest-cli" = "latest"
 python = "latest"
 ruby = "latest"
+rust = "stable"
 usage = "latest"
 
 [alias]
