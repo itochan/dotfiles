@@ -52,11 +52,6 @@
 	root = ~/src
 [include]
 	path = ~/.config/git/config.d/user
-[credential "https://github.com"]
-	helper = 
-	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !gh auth git-credential
+  path = ~/.config/git/config.d/gh
 [commit]
 	gpgsign = true
