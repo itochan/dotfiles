@@ -1,5 +1,0 @@
-source-file ~/.tmux.conf
-unbind C-z
-unbind-key C-z
-set-option -g prefix C-x
-bind-key C-x last-window
