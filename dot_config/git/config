@@ -31,7 +31,7 @@
 	branch = true
 	short = true
 [diff]
-       partience = true
+	partience = true
 [diff "encrypted"]
 	textconv = hexdump -v -C
 [gpg]
@@ -52,6 +52,6 @@
 	root = ~/src
 [include]
 	path = ~/.config/git/config.d/user
-  path = ~/.config/git/config.d/gh
+	path = ~/.config/git/config.d/gh
 [commit]
 	gpgsign = true
