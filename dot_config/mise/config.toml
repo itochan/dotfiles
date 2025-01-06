@@ -11,6 +11,7 @@ python = "latest"
 ruby = "latest"
 rust = "stable"
 usage = "latest"
+watchexec = "latest"
 
 [alias]
 flutter = "asdf:nyuyuyu/asdf-flutter"
