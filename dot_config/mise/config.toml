@@ -4,6 +4,7 @@ go = "latest"
 java = "zulu-21"
 node = "lts"
 "npm:opencommit" = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
 perl = "latest"
 pipx = "latest"
 "pipx:ansible" = { version = "latest", pipx_args = "--include-deps" }
