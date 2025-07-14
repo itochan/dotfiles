@@ -18,9 +18,10 @@ path=(
   ~/.local/bin(N-/)
 
   # Android SDK
+  $android_location/build-tools/36.0.0(N-/)
   $android_location/emulator(N-/)
   $android_location/platform-tools(N-/)
-  $android_location/tools(N-/)
+  $android_location/cmdline-tools/latest/bin(N-/)
 
   # Git diff-highlight
   $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight(N-/)
