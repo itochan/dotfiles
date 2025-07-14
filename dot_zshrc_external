@@ -11,7 +11,7 @@ fi
 [[ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]] && . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # google-cloud-sdk
-[[ -d $HOMEBREW_PREFIX/share/google-cloud-sdk ]] && . $HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc 
+[[ -d $HOMEBREW_PREFIX/share/google-cloud-sdk ]] && . $HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc
 
 local android_location=(~/Library/Android/sdk(N-/))
 path=(
