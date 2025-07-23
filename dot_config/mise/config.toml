@@ -31,6 +31,3 @@ yt-dlp = "latest"
 terraform = "latest"
 xcodes = "latest"
 gcloud = "latest"
-
-[alias]
-flutter = "asdf:nyuyuyu/asdf-flutter"
