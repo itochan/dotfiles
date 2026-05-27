@@ -6,10 +6,12 @@ config.default_domain = 'unix'
 config.color_scheme = 'Sublette'
 
 config.font = wezterm.font_with_fallback {
-  'UDEV Gothic 35',
+  'UDEV Gothic NF',
   'JetBrains Mono',
 }
-config.font_size = 16.0
+config.font_size = 18.0
+config.line_height = 1.08
+config.cell_width = 1.05
 
 config.initial_cols = 120
 config.initial_rows = 36
