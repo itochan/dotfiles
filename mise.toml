@@ -21,3 +21,4 @@ postinstall = "hk install --mise"
 
 [settings]
 experimental = true
+lockfile = true
