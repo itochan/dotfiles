@@ -1,5 +1,5 @@
-amends "package://github.com/jdx/hk/releases/download/v1.45.0/hk@1.45.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.45.0/hk@1.45.0#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v1.46.0/hk@1.46.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.46.0/hk@1.46.0#/Builtins.pkl"
 
 local linters = new Mapping<String, Step> {
   ["check_added_large_files"] = Builtins.check_added_large_files
@@ -11,6 +11,11 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["mixed_line_ending"] = Builtins.mixed_line_ending
   ["pkl_format"] = Builtins.pkl_format
+  ["gitleaks"] = Builtins.gitleaks
+  ["typos"] = Builtins.typos
+  ["mise"] = Builtins.mise
+  ["oxfmt"] = Builtins.oxfmt
+  ["stylua"] = Builtins.stylua
 }
 
 hooks {
