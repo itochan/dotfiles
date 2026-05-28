@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository purpose
 
-itochan's personal dotfiles, managed by [chezmoi](https://www.chezmoi.io/). Files in this repo are *source state*; chezmoi renders them into the home directory. Never edit the rendered files in `$HOME` directly — edit the source here and apply.
+itochan's personal dotfiles, managed by [chezmoi](https://www.chezmoi.io/). Files in this repo are _source state_; chezmoi renders them into the home directory. Never edit the rendered files in `$HOME` directly — edit the source here and apply.
 
 ## Chezmoi naming conventions (critical)
 
