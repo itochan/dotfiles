@@ -16,6 +16,8 @@ local linters = new Mapping<String, Step> {
   ["mise"] = Builtins.mise
   ["oxfmt"] = Builtins.oxfmt
   ["stylua"] = Builtins.stylua
+  ["shellcheck"] = Builtins.shellcheck
+  ["shfmt"] = Builtins.shfmt
 }
 
 hooks {

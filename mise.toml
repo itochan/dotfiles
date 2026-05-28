@@ -5,6 +5,8 @@ pkl = "0.31.1"
 typos = "1.46.3"
 oxfmt = "0.52.0"
 stylua = "2.5.2"
+shellcheck = "0.11.0"
+shfmt = "3.13.1"
 
 [tasks.pre-commit]
 run = "hk run pre-commit"
