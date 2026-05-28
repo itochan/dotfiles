@@ -5,7 +5,9 @@ local linters = new Mapping<String, Step> {
   ["check_added_large_files"] = Builtins.check_added_large_files
   ["check_merge_conflict"] = Builtins.check_merge_conflict
   ["detect_private_key"] = Builtins.detect_private_key
-  ["trailing_whitespace"] = Builtins.trailing_whitespace
+  ["trailing_whitespace"] = (Builtins.trailing_whitespace) {
+    exclude = List("**/*.md")
+  }
   ["newlines"] = Builtins.newlines
   ["mixed_line_ending"] = Builtins.mixed_line_ending
   ["pkl_format"] = Builtins.pkl_format
