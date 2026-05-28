@@ -54,7 +54,7 @@ function! s:VrbUpdate(postfile, gvim)
     if a:postfile != ''
         let postfile = a:postfile
     else
-        let postfile = a:gvim ? 
+        let postfile = a:gvim ?
                     \(g:vimrcbox_gvimrc != '' ? g:vimrcbox_gvimrc : $MYGVIMRC)
                     \: (g:vimrcbox_vimrc  != '' ? g:vimrcbox_vimrc  : $MYVIMRC)
     endif
