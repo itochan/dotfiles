@@ -35,5 +35,9 @@
     ],
     "deny": ["Bash(rm:*)"]
   },
-  "includeCoAuthoredBy": true
+  "includeCoAuthoredBy": true,
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
+  }
 }
