@@ -1,14 +1,14 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.default_domain = 'unix'
+config.default_domain = "unix"
 
-config.color_scheme = 'Sublette'
+config.color_scheme = "Sublette"
 
-config.font = wezterm.font_with_fallback {
-  'UDEV Gothic NF',
-  'JetBrains Mono',
-}
+config.font = wezterm.font_with_fallback({
+  "UDEV Gothic NF",
+  "JetBrains Mono",
+})
 config.font_size = 18.0
 config.line_height = 1.08
 config.cell_width = 1.05
@@ -18,20 +18,20 @@ config.initial_rows = 36
 
 config.keys = {
   {
-    key = 'LeftArrow',
-    mods = 'META',
-    action = wezterm.action.SendKey {
-      key = 'b',
-      mods = 'META|ALT',
-    },
+    key = "LeftArrow",
+    mods = "META",
+    action = wezterm.action.SendKey({
+      key = "b",
+      mods = "META|ALT",
+    }),
   },
   {
-    key = 'RightArrow',
-    mods = 'META',
-    action = wezterm.action.SendKey {
-      key = 'f',
-      mods = 'META|ALT',
-    },
+    key = "RightArrow",
+    mods = "META",
+    action = wezterm.action.SendKey({
+      key = "f",
+      mods = "META|ALT",
+    }),
   },
 }
 
