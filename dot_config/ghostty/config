@@ -1,0 +1,7 @@
+theme = Sublette
+
+font-family = "UDEV Gothic 35NF"
+font-family = "JetBrains Mono"
+font-size = 16
+adjust-cell-height = 8%
+adjust-cell-width = 5%
