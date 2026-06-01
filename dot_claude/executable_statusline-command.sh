@@ -1,6 +1,6 @@
 #!/bin/sh
 # Claude Code statusline. Reads a session JSON object on stdin and prints:
-#   line 1:  owner/repo  branch Model ctx N%
+#   line 1:  owner/repo  branch [ worktree] Model ctx N%
 #   line 2: 5h <bar> N% <reset-in> [✓ |  100% in <eta>] 7d N% <reset-in> [✓ |  100% in <eta>]
 #
 # Glyphs are Nerd Font (UDEV Gothic NF):
@@ -34,10 +34,11 @@ reset="${esc}[0m"
 # so it resolves to UDEV Gothic NF cleanly — and we use it here to match the
 # branch glyph Starship uses by default.
 # printf hex escapes also dodge tool round-trip issues with PUA literals.
-icon_repo=$(printf '\xf3\xb0\x8a\xa4')  # nf-md-github          (U+F02A4)
-icon_branch=$(printf '\xee\x82\xa0')    # nf-pl-branch          (U+E0A0)
-icon_clock=$(printf '\xf3\xb0\x85\x90') # nf-md-clock_outline   (U+F0150)
-icon_bolt=$(printf '\xf3\xb1\x90\x8b')  # nf-md-lightning_bolt  (U+F140B)
+icon_repo=$(printf '\xf3\xb0\x8a\xa4')     # nf-md-github          (U+F02A4)
+icon_branch=$(printf '\xee\x82\xa0')       # nf-pl-branch          (U+E0A0)
+icon_worktree=$(printf '\xf3\xb0\x99\x85') # nf-md-file_tree    (U+F0645)
+icon_clock=$(printf '\xf3\xb0\x85\x90')    # nf-md-clock_outline   (U+F0150)
+icon_bolt=$(printf '\xf3\xb1\x90\x8b')     # nf-md-lightning_bolt  (U+F140B)
 
 # 0-49% green / 50-79% yellow / 80%+ red.
 color_for_pct() {
@@ -191,14 +192,27 @@ fi
 repo=$(echo "$input" | jq -r '.workspace.repo | if . then .owner + "/" + .name else empty end')
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd // empty')
 branch=""
+worktree=""
 if [ -n "$cwd" ]; then
   branch=$(git -C "$cwd" branch --show-current 2>/dev/null)
+  # Detect a linked git worktree. In the main working tree, --git-dir and
+  # --git-common-dir resolve to the same path; in a linked worktree, --git-dir
+  # points at .git/worktrees/<name> while --git-common-dir points at the shared
+  # .git, so the two diverge. When they do, label it with the worktree's
+  # top-level directory name.
+  git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null)
+  common_dir=$(git -C "$cwd" rev-parse --git-common-dir 2>/dev/null)
+  if [ -n "$git_dir" ] && [ "$git_dir" != "$common_dir" ]; then
+    toplevel=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
+    [ -n "$toplevel" ] && worktree=$(basename "$toplevel")
+  fi
 fi
 
 repo_info=""
 prefix=""
 [ -n "$repo" ] && prefix="${icon_repo} $repo"
 [ -n "$branch" ] && prefix="${prefix:+$prefix }${icon_branch} $branch"
+[ -n "$worktree" ] && prefix="${prefix:+$prefix }${esc}[36m${icon_worktree} ${worktree}${reset}"
 [ -n "$prefix" ] && repo_info="${prefix} "
 
 # Line 1: repo + model + ctx
