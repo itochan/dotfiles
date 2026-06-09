@@ -4,14 +4,13 @@ if [[ -d $HOME/.atuin ]]; then
   eval "$(atuin init zsh)"
 fi
 
-# autojump
-[[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
+# zoxide
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
 
 # zsh-syntax-highlighting
 [[ -d $HOMEBREW_PREFIX/share/zsh-syntax-highlighting ]] && . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# google-cloud-sdk
-[[ -d $HOMEBREW_PREFIX/share/google-cloud-sdk ]] && . $HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc
 
 local android_location=(~/Library/Android/sdk(N-/))
 path=(
@@ -48,7 +47,6 @@ fi
 # Starship
 if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
-  eval "$(starship completions zsh)"
 fi
 
 # Android SDK

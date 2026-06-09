@@ -7,6 +7,12 @@ fi
 
 export LANG=en_US.UTF-8
 
+# Keep path/fpath duplicate-free. `brew shellenv` does `fpath[1,0]=.../site-functions`
+# and `export FPATH`, so every nested shell re-prepends it; without dedup the
+# completion-file count drifts between startups and compinit regenerates its
+# ~60KB dump every time (the slow path). The -U attribute collapses repeats.
+typeset -gU path fpath
+
 path=(
   $HOME/local/bin(N-/)
   /usr/local/bin(N-/)
