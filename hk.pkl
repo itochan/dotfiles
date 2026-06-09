@@ -11,7 +11,6 @@ local linters = new Mapping<String, Step> {
   ["newlines"] = Builtins.newlines
   ["mixed_line_ending"] = Builtins.mixed_line_ending
   ["pkl_format"] = Builtins.pkl_format
-  ["gitleaks"] = Builtins.gitleaks
   ["typos"] = Builtins.typos
   ["mise"] = Builtins.mise
   ["oxfmt"] = Builtins.oxfmt
@@ -24,7 +23,14 @@ hooks {
   ["pre-commit"] {
     fix = true
     stash = "git"
-    steps = linters
+    // gitleaks only runs here: it scans staged files, so the gitignored
+    // local age key (key.txt) is never scanned in a normal commit and never
+    // false-positives. A force-added (`git add -f key.txt`) secret is still
+    // staged and gets blocked. Keeping it out of check/fix avoids the
+    // whole-tree (`--all`) false positive without needing a .gitleaksignore.
+    steps = (linters) {
+      ["gitleaks"] = Builtins.gitleaks
+    }
   }
   ["fix"] {
     fix = true
