@@ -21,8 +21,13 @@
 	autoSetupRemote = true
 [pull]
 	rebase = true
-[branch "develop"]
-	mergeoptions = --no-ff
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictStyle = zdiff3
 [rerere]
 	enabled = true
 [status]
