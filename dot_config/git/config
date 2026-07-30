@@ -35,6 +35,13 @@
 	short = true
 [diff]
 	algorithm = histogram
+	mnemonicPrefix = true
+	colorMoved = zebra
+	colorMovedWS = allow-indentation-change
+[log]
+	follow = true
+[tag]
+	sort = version:refname
 [diff "encrypted"]
 	textconv = hexdump -v -C
 [gpg]
@@ -48,6 +55,8 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
 [init]
 	defaultBranch = main
 [ghq]
