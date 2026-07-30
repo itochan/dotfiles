@@ -1,16 +1,14 @@
 [user]
 	name = Kazunori Jo
 	email = 519604+itochan@users.noreply.github.com
-	signingkey = 49D946F3
-[color]
-	ui = true
+	; full fingerprint of the same key; a public GPG fingerprint is not a secret
+	signingkey = E38C719B678450D60CF7CA712E389FCD49D946F3 # gitleaks:allow
 [alias]
 	tree = log --graph --date=short --pretty='format:%C(yellow)%h %Creset%cd %s %Cgreen(%an)%Creset %Cred%d%Creset'
 	co = checkout
 	ci = commit
 	br = branch
 	st = status -sb
-	br = branch
 	di = diff
 	dic = diff --cached
 	pl = pull
@@ -31,7 +29,7 @@
 	branch = true
 	short = true
 [diff]
-	partience = true
+	algorithm = histogram
 [diff "encrypted"]
 	textconv = hexdump -v -C
 [gpg]
