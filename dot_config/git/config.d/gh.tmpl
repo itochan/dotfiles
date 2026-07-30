@@ -1,8 +1,11 @@
-{{ if lookPath "gh" }}
+{{- /* Use the mise shim, not lookPath: lookPath resolves to the version-pinned
+       install path (…/gh_2.96.0_macOS_arm64/bin/gh), which breaks on upgrade. */ -}}
+{{- $gh := printf "%s/.local/share/mise/shims/gh" .chezmoi.homeDir -}}
+{{ if stat $gh }}
 [credential "https://github.com"]
 	helper =
-	helper = !{{ lookPath "gh" }} auth git-credential
+	helper = !{{ $gh }} auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !{{ lookPath "gh" }} auth git-credential
+	helper = !{{ $gh }} auth git-credential
 {{ end }}
