@@ -53,6 +53,10 @@
 [ghq]
 	root = ~/go/src
 	root = ~/src
+[url "https://github.com/"]
+	; authenticate over HTTPS via the gh credential helper (config.d/gh)
+	; instead of SSH, so ssh-agent is not needed for github.com
+	insteadOf = git@github.com:
 [include]
 	path = ~/.config/git/config.d/user
 	path = ~/.config/git/config.d/gh
