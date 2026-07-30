@@ -19,7 +19,7 @@
 	editor = vim
 	quotepath = false
 [push]
-	default = tracking
+	default = simple
 	autoSetupRemote = true
 [pull]
 	rebase = true
